@@ -70,12 +70,12 @@ class PaginatedMenuProcessor extends MenuProcessor
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
-        $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()[$paginationSettings['paginationElementIdUrlKey']] ? : 1;
+        $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
         $paginationElementId = $processedData['data']['uid'];
 
         if ($paginationIsActive) {
           if($paginationElementIdKey == $paginationElementId) {
-            $currentPage = (int)$cObj->getRequest()->getQueryParams()[$paginationSettings['paginationPageUrlKey']] ? : 1;
+            $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
           } else {
             $currentPage = 1;
           }

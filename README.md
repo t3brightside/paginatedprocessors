@@ -7,7 +7,7 @@
 
 ## System requirements
 
-- TYPO3 11.5 LTS
+- TYPO3
 
 ## Installation
 
@@ -16,41 +16,45 @@
 
 ## Usage
 
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
+```
+10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
+10 {
+  pagination {
+    isActive = 1
+    itemsPerPage = 6
+  }
+  ...
+}
 
+Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
+...
+Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
+...
+```
 **Route enhancers**
-```json
-  routeEnhancers:
-    Pagelist:
-      type: Simple
-      routePath: '/page/{paginationElementId}-{paginationPage}'
-      aspects:
-        paginationElementId:
-          type: PersistedAliasMapper
-          tableName: 'tt_content'
-          routeFieldName: 'uid'
-          routeValueSuffix: '/'
-        paginationPage:
-          type: StaticRangeMapper
-          start: '1'
-          end: '999'
+```
+routeEnhancers:
+  Pagelist:
+    type: Simple
+    routePath: '/page/{paginationElementId}-{paginationPage}'
+    aspects:
+      paginationElementId:
+        type: PersistedAliasMapper
+        tableName: 'tt_content'
+        routeFieldName: 'uid'
+        routeValueSuffix: '/'
+      paginationPage:
+        type: StaticRangeMapper
+        start: '1'
+        end: '999'
 ```
 
 ## Sources
 
--  [GitHub][a47ab545]
--  [Packagist][40819ab1]
--  [TER][15e0f507]
+-  [GitHub](https://github.com/t3brightside/paginatedprocessors)
+-  [Packagist](https://packagist.org/packages/t3brightside/paginatedprocessors)
+-  [TER](https://extensions.typo3.org/extension/paginatedprocessors/)
 
-  [a47ab545]: https://github.com/t3brightside/paginatedprocessors "GitHub"
-  [40819ab1]: https://packagist.org/packages/t3brightside/paginatedprocessors "Packagist"
-  [15e0f507]: https://extensions.typo3.org/extension/paginatedprocessors/ "Typo3 Extension Repository"
+## Development and maintenance
 
-Development and maintenance
----------------------------
-
-[Brightside OÜ – TYPO3 development and hosting specialised web agency][ab26eed2]
-
-  [ab26eed2]: https://t3brightside.com/ "TYPO3 development and hosting specialised web agency"
+[Brightside OÜ – TYPO3 development and hosting specialised web agency](https://t3brightside.com/ )

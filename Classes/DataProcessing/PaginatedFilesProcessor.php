@@ -7,6 +7,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\Resource\FileCollector;
+use TYPO3\CMS\Frontend\DataProcessing\FilesProcessor;
 
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
@@ -23,16 +24,15 @@ class PaginatedFilesProcessor extends FilesProcessor
         array $processorConfiguration,
         array $processedData
     ) {
-
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
-        $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()[$paginationSettings['paginationElementIdUrlKey']] ? : 1;
+        $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
         $paginationElementId = $processedData['data']['uid'];
 
         if ($paginationIsActive) {
           if($paginationElementIdKey == $paginationElementId) {
-            $currentPage = (int)$cObj->getRequest()->getQueryParams()[$paginationSettings['paginationPageUrlKey']] ? : 1;
+            $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
           } else {
             $currentPage = 1;
           }
@@ -53,8 +53,12 @@ class PaginatedFilesProcessor extends FilesProcessor
               'nextPage' => $pagination->getNextPageNumber()
             )
           );
+          debug($combinedData);
+
           return $combinedData;
         } else {
+          debug($allProcessedData);
+
           return $allProcessedData;
         }
     }
