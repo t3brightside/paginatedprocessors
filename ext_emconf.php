@@ -1,5 +1,4 @@
 <?php
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Paginated Processors',
     'description' => 'Paginated data processors',

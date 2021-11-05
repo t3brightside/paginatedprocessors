@@ -3,11 +3,8 @@ declare(strict_types = 1);
 
 namespace Brightside\Paginatedprocessors\DataProcessing;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
-use TYPO3\CMS\Frontend\Resource\FileCollector;
-
+use TYPO3\CMS\Frontend\DataProcessing\MenuProcessor;
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 
@@ -15,15 +12,61 @@ use TYPO3\CMS\Core\Pagination\SimplePagination;
  * Adds pagination API to the DatabaseQueryProcessor
  */
 
-class PaginatedFilesProcessor extends FilesProcessor
+class PaginatedMenuProcessor extends MenuProcessor
 {
+  /**
+   * Allowed configuration keys for menu generation, other keys
+   * will throw an exception to prevent configuration errors.
+   *
+   * @var array
+   */
+  public $allowedConfigurationKeys = [
+      'cache_period',
+      'entryLevel',
+      'entryLevel.',
+      'special',
+      'special.',
+      'minItems',
+      'minItems.',
+      'maxItems',
+      'maxItems.',
+      'begin',
+      'begin.',
+      'alternativeSortingField',
+      'alternativeSortingField.',
+      'showAccessRestrictedPages',
+      'showAccessRestrictedPages.',
+      'excludeUidList',
+      'excludeUidList.',
+      'excludeDoktypes',
+      'includeNotInMenu',
+      'includeNotInMenu.',
+      'alwaysActivePIDlist',
+      'alwaysActivePIDlist.',
+      'protectLvar',
+      'addQueryString',
+      'addQueryString.',
+      'if',
+      'if.',
+      'levels',
+      'levels.',
+      'expandAll',
+      'expandAll.',
+      'includeSpacer',
+      'includeSpacer.',
+      'as',
+      'titleField',
+      'titleField.',
+      'dataProcessing',
+      'dataProcessing.',
+      'pagination.',
+  ];
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
     ) {
-
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
