@@ -12,10 +12,6 @@ use TYPO3\CMS\Frontend\DataProcessing\FilesProcessor;
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 
-/**
- * Adds pagination API to the DatabaseQueryProcessor
- */
-
 class PaginatedFilesProcessor extends FilesProcessor
 {
     public function process(
