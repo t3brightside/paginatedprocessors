@@ -4,7 +4,8 @@
 	"description": "Adds paginated dataprocessors",
 	"keywords": [
 		"TYPO3",
-		"pagination"
+		"pagination",
+		"dataProcessing"
 	],
 	"homepage": "https://github.com/t3brightside/paginatedprocessors",
 	"authors": [
@@ -15,8 +16,7 @@
 	],
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"typo3/cms-core": "^11",
-		"php": ">=7.4"
+		"typo3/cms-core": "^11"
 	},
 	"extra": {
 		"typo3/cms": {
@@ -26,11 +26,6 @@
 	"autoload": {
 		"psr-4": {
 			"Brightside\\Paginatedprocessors\\": "Classes"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"GeorgRinger\\NumberedPagination\\Tests\\": "Tests"
 		}
 	}
 }
