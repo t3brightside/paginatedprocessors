@@ -53,12 +53,8 @@ class PaginatedFilesProcessor extends FilesProcessor
               'nextPage' => $pagination->getNextPageNumber()
             )
           );
-          debug($combinedData);
-
           return $combinedData;
         } else {
-          debug($allProcessedData);
-
           return $allProcessedData;
         }
     }
