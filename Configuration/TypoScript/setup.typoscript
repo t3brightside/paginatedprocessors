@@ -1,0 +1,5 @@
+lib.contentElement {
+  partialRootPaths {
+    345 = EXT:paginatedprocessors/Resources/Private/Partials
+  }
+}
