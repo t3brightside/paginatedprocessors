@@ -32,7 +32,7 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 ...
 ```
 **Template**
-```
+```XML
 <f:for each="{pages}" as="page" iteration="iterator">
   <f:render partial="List" arguments="{_all}" />
 </f:for>
