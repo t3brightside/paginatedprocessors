@@ -16,7 +16,7 @@
 
 ## Usage
 **TypoScript**
-```
+```TypoScript
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 10 {
   pagination {
