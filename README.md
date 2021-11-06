@@ -15,6 +15,7 @@
  - include static template
 
 ## Usage
+So far there's 3 dataProcessors available, see the TS section
 **TypoScript Constants**
 ```
 paginatedprocessors {
