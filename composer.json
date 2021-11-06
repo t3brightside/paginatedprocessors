@@ -15,7 +15,7 @@
 		}
 	],
 	"license": [
-    "GPL-2.0-or-later"
+    "GPL-3.0-or-later"
   ],
 	"require": {
 		"typo3/cms-core": "^11.5"
