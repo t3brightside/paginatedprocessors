@@ -33,8 +33,8 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 ```
 **Template**
 ```
-<f:for each="{pagelist}" as="page" iteration="iterator">
-  <f:render partial="Card" arguments="{_all}" />
+<f:for each="{pages}" as="page" iteration="iterator">
+  <f:render partial="List" arguments="{_all}" />
 </f:for>
 <f:if condition="{pagination.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{_all}" />
