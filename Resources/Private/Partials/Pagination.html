@@ -1,13 +1,13 @@
 <f:comment>section="c{data.uid}"</f:comment>
 <nav role="navigation" aria-label="{f:translate(key: 'pagination.aria.navigation', extensionName: 'paginatedprocessors')}">
 	<ul class="pagination">
-		<f:if condition="{pagination.previousPage}">
+		<f:if condition="{pagination.previousPageNumber}">
 			<li class="previous">
-				<f:link.page additionalParams="{paginationPage: pagination.previousPage, paginationElementId: data.uid}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
+				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginationElementId: data.uid}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
 			</li>
 		</f:if>
-		<f:for each="{pagination.paginationPages}" as="currentPage" iteration="iterator">
-			<f:if condition="{currentPage} == {pagination.current}">
+		<f:for each="{pagination.allPageNumbers}" as="currentPage" iteration="iterator">
+			<f:if condition="{currentPage} == {pagination.currentPageNumber}">
 				<f:then>
 					<li class="current">
 						{currentPage}
@@ -27,9 +27,9 @@
 				</f:else>
 			</f:if>
 		</f:for>
-		<f:if condition="{pagination.nextPage}">
+		<f:if condition="{pagination.nextPageNumber}">
 			<li class="next">
-				<f:link.page additionalParams="{paginationPage: pagination.nextPage, paginationElementId: data.uid}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
+				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginationElementId: data.uid}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
 			</li>
 		</f:if>
 	</ul>

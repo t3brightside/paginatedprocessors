@@ -41,10 +41,10 @@ class PaginatedFilesProcessor extends FilesProcessor
             $processorConfiguration['as'] => $paginator->getPaginatedItems(),
             'pagination' => array(
               'numberOfPages' => $paginator->getNumberOfPages(),
-              'current' => $paginator->getCurrentPageNumber(),
-              'paginationPages' => $pagination->getAllPageNumbers(),
-              'previousPage' => $pagination->getPreviousPageNumber(),
-              'nextPage' => $pagination->getNextPageNumber()
+              'currentPageNumber' => $paginator->getCurrentPageNumber(),
+              'allPageNumbers' => $pagination->getAllPageNumbers(),
+              'previousPageNumber' => $pagination->getPreviousPageNumber(),
+              'nextPageNumber' => $pagination->getNextPageNumber()
             )
           );
           $allProcessedData = array_merge($allProcessedData, $paginatedData);
