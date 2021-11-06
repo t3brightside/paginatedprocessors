@@ -49,19 +49,19 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 **Route enhancers**
 ```
 routeEnhancers:
-  Pagelist:
+  Paginatedprocessors:
     type: Simple
-    routePath: '/page/{paginationElementId}-{paginationPage}'
+    routePath: '/page/{paginationPage}-{paginationElementId}'
     aspects:
-      paginationElementId:
-        type: PersistedAliasMapper
-        tableName: 'tt_content'
-        routeFieldName: 'uid'
-        routeValueSuffix: '/'
       paginationPage:
         type: StaticRangeMapper
         start: '1'
         end: '999'
+      paginationElementId:
+        type: PersistedAliasMapper
+        tableName: 'tt_content'
+        routeFieldName: 'uid'
+
 ```
 
 ## Sources
