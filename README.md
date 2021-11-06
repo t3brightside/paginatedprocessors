@@ -15,7 +15,14 @@
  - include static template
 
 ## Usage
-**TypoScript**
+**TypoScript Constants**
+```
+paginatedprocessors {
+  enableDefaultStyles = 0
+  itemsPerPageDefault = 6
+}
+```
+**TypoScript Setup**
 ```
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 10 {

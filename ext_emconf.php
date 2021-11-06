@@ -5,6 +5,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'fe',
     'author' => 'Tanel Põld',
     'author_email' => 'tanel@brightside.ee',
+    'author_company' => 'Brightside OÜ / t3brightside.com',
     'state' => 'beta',
     'clearCacheOnLoad' => true,
     'version' => '0.0.1',

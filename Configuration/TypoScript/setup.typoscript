@@ -1,4 +1,14 @@
+
+["{$paginatedprocessors.enableDefaultStyles}" == "1"]
+  page.includeCSS.paginatedprocessors = EXT:paginatedprocessors/Resources/Public/Styles/paginatedprocessors.css
+[END]
+
 lib.contentElement {
+  settings {
+    paginatedprocessors {
+      enableAnchorToContentElement = {$paginatedprocessors.enableAnchorToContentElement}
+    }
+  }
   partialRootPaths {
     345 = EXT:paginatedprocessors/Resources/Private/Partials
   }

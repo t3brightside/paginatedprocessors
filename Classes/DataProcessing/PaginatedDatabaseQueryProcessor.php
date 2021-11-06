@@ -23,10 +23,10 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
-        $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
-        $paginationElementId = $processedData['data']['uid'];
 
         if ($paginationIsActive) {
+          $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
+          $paginationElementId = $processedData['data']['uid'];
           if($paginationElementIdKey == $paginationElementId) {
             $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
           } else {
@@ -36,10 +36,8 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
           $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? []));
           $paginator = new ArrayPaginator($itemsToPaginate, $currentPage, $itemsPerPage);
           $pagination = new SimplePagination($paginator);
-          $combinedData = array(
-            'settings' => $contentObjectConfiguration['settings.'],
-            'variables' => $contentObjectConfiguration['variables.'],
-            'data' => $allProcessedData['data'],
+          $allProcessedData = array_diff_key($allProcessedData, array_flip([$processorConfiguration['as']]));
+          $paginatedData = array(
             $processorConfiguration['as'] => $paginator->getPaginatedItems(),
             'pagination' => array(
               'numberOfPages' => $paginator->getNumberOfPages(),
@@ -49,7 +47,8 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
               'nextPage' => $pagination->getNextPageNumber()
             )
           );
-          return $combinedData;
+          $allProcessedData = array_merge($allProcessedData, $paginatedData);
+          return $allProcessedData;
         } else {
           return $allProcessedData;
         }

@@ -1,7 +1,7 @@
 {
 	"name": "t3brightside/paginatedprocessors",
 	"type": "typo3-cms-extension",
-	"description": "Paginated dataprocessors",
+	"description": "Paginated dataprocessors for TYPO3",
 	"keywords": [
 		"TYPO3",
 		"pagination",
@@ -11,7 +11,9 @@
 	"authors": [
 		{
 			"name": "Tanel Põld",
-			"role": "Developer"
+      "role": "Developer",
+      "email": "tanel@brightside.ee",
+      "homepage": "https://t3brightside.com"
 		}
 	],
 	"license": [
