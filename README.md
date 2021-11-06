@@ -16,7 +16,7 @@
 
 ## Usage
 **TypoScript**
-```TypoScript
+```TypeScript
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 10 {
   pagination {
@@ -27,9 +27,8 @@
 }
 
 Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
-...
 Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
-...
+
 ```
 **Template**
 ```XML
