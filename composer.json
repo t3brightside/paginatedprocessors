@@ -1,7 +1,7 @@
 {
 	"name": "t3brightside/paginatedprocessors",
 	"type": "typo3-cms-extension",
-	"description": "Adds paginated dataprocessors",
+	"description": "Paginated dataprocessors",
 	"keywords": [
 		"TYPO3",
 		"pagination",
