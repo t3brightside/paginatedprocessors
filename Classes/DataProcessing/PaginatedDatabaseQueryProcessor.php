@@ -20,6 +20,7 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
         array $processorConfiguration,
         array $processedData
     ) {
+      debug($processedData);
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
@@ -33,7 +34,7 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
             $currentPage = 1;
           }
           $itemsToPaginate = $allProcessedData[$processorConfiguration['as']];
-          $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? []));
+          $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? [])) ? : 10;
           $paginator = new ArrayPaginator($itemsToPaginate, $currentPage, $itemsPerPage);
           $pagination = new SimplePagination($paginator);
           $allProcessedData = array_diff_key($allProcessedData, array_flip([$processorConfiguration['as']]));

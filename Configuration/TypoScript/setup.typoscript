@@ -4,11 +4,6 @@
 [END]
 
 lib.contentElement {
-  settings {
-    paginatedprocessors {
-      enableAnchorToContentElement = {$paginatedprocessors.enableAnchorToContentElement}
-    }
-  }
   partialRootPaths {
     345 = EXT:paginatedprocessors/Resources/Private/Partials
   }
