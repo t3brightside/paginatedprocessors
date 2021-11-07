@@ -16,13 +16,6 @@
 
 ## Usage
 So far there's 3 dataProcessors available, see the TS section
-**TypoScript Constants**
-```
-paginatedprocessors {
-  enableDefaultStyles = 0
-  itemsPerPageDefault = 6
-}
-```
 **TypoScript Setup**
 ```
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor

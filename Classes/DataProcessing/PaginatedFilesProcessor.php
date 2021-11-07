@@ -43,13 +43,14 @@ class PaginatedFilesProcessor extends FilesProcessor
               'numberOfPages' => $paginator->getNumberOfPages(),
               'currentPageNumber' => $paginator->getCurrentPageNumber(),
               'keyOfFirstPaginatedItem' => $paginator->getKeyOfFirstPaginatedItem(),
-              'KeyOfLastPaginatedItem' => $paginator->getKeyOfLastPaginatedItem(),
+              'keyOfLastPaginatedItem' => $paginator->getKeyOfLastPaginatedItem(),
               'allPageNumbers' => $pagination->getAllPageNumbers(),
               'previousPageNumber' => $pagination->getPreviousPageNumber(),
               'nextPageNumber' => $pagination->getNextPageNumber()
             )
           );
           $allProcessedData = array_merge($allProcessedData, $paginatedData);
+          debug($allProcessedData);
           return $allProcessedData;
         } else {
           return $allProcessedData;
