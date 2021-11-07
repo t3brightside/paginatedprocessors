@@ -16,6 +16,7 @@
 
 ## Usage
 So far there's 3 dataProcessors available for now, see the TS section
+
 **TypoScript Setup**
 ```
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
