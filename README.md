@@ -40,7 +40,7 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
   <f:render partial="List" arguments="{_all}" />
 </f:for>
 <f:if condition="{pagination.numberOfPages} > 1">
-  <f:render partial="Pagination" arguments="{_all}" />
+  <f:render partial="Pagination" arguments="{pagination:pagination}" />
 </f:if>
 ```
 **Route enhancers**

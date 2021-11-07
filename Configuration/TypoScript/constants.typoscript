@@ -1,4 +1,3 @@
 # customsubcategory=paginatedprocessors=Paginatedprocessors
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label= Styles file
 paginatedprocessors.enableDefaultStyles = 1
-paginatedprocessors.enableAnchorToContentElement = 1
