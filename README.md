@@ -22,10 +22,10 @@ So far there's 3 dataProcessors available for now, see the TS section
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 10 {
   pagination {
-    # default 0
     isActive = 1
-    # default 10
+    # default 0
     itemsPerPage = 6
+    # default 10
   }
   ...
 }
