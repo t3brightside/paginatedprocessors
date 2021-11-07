@@ -50,7 +50,6 @@ class PaginatedFilesProcessor extends FilesProcessor
             )
           );
           $allProcessedData = array_merge($allProcessedData, $paginatedData);
-          debug($allProcessedData);
           return $allProcessedData;
         } else {
           return $allProcessedData;
