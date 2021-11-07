@@ -2,7 +2,7 @@
 	<ul class="pagination">
 		<f:if condition="{pagination.previousPageNumber}">
 			<li class="previous">
-				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginationId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
+				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
 			</li>
 		</f:if>
 		<f:for each="{pagination.allPageNumbers}" as="currentPage" iteration="iterator">
@@ -19,7 +19,7 @@
 								<f:link.page>{currentPage}</f:link.page>
 							</f:then>
 							<f:else>
-								<f:link.page additionalParams="{paginationPage: currentPage, paginationId: pagination.uniqueId}">{currentPage}</f:link.page>
+								<f:link.page additionalParams="{paginationPage: currentPage, paginatorId: pagination.uniqueId}">{currentPage}</f:link.page>
 							</f:else>
 						</f:if>
 					</li>
@@ -28,7 +28,7 @@
 		</f:for>
 		<f:if condition="{pagination.nextPageNumber}">
 			<li class="next">
-				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginationId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
+				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
 			</li>
 		</f:if>
 	</ul>

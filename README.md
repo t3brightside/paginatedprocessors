@@ -26,15 +26,15 @@ Paginated processors available:
 10 {
   pagination {
     isActive = 1
-    itemsPerPage = 6
+    itemsPerPage = 10
 
     # content element context, returns array 'pagination'
     uniqueId.field = uid
     uniquePaginatorName = 0
 
-    # in page context, returns array 'pagination_mypaginator'
-    uniqueId = mypaginator
-    uniquePaginatorName = 1
+    # in page context, returns array 'pagination_gallery'
+    # uniqueId = gallery
+    # uniquePaginatorName = 1
   }
   ...
 }
@@ -50,26 +50,37 @@ Paginated processors available:
   <f:render partial="Pagination" arguments="{pagination:pagination}" />
 </f:if>
 <!-- page context -->
-<f:if condition="{pagination_mypaginator.numberOfPages} > 1">
-  <f:render partial="Pagination" arguments="{pagination:pagination_mypaginator}" />
+<f:if condition="{pagination_gallery.numberOfPages} > 1">
+  <f:render partial="Pagination" arguments="{pagination:pagination_gallery}" />
 </f:if>
 ```
 **Route enhancers**
 ```
 routeEnhancers:
-  Paginatedprocessors:
+  NamePaginatedprocessors:
     type: Simple
-    routePath: '/page/{paginationPage}-{paginationElementId}'
+    routePath: '/{paginatorName}/{paginationPage}'
     aspects:
+      paginatorName:
+        type: StaticValueMapper
+        map:
+          gallery: 'gallery'
       paginationPage:
         type: StaticRangeMapper
-        start: '1'
-        end: '999'
-      paginationElementId:
+        start: '0'
+        end: '900'
+  UidPaginatedprocessors:
+    type: Simple
+    routePath: '/{paginatorId}/{paginationPage}'
+    aspects:
+      paginatorId:
         type: PersistedAliasMapper
         tableName: 'tt_content'
         routeFieldName: 'uid'
-
+      paginationPage:
+        type: StaticRangeMapper
+        start: '0'
+        end: '999'
 ```
 
 ## Sources

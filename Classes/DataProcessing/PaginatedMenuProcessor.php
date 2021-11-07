@@ -71,16 +71,24 @@ class PaginatedMenuProcessor extends MenuProcessor
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
         if ($paginationIsActive) {
-          $paginationUniqueId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
-          $paginationUniqueIdKey = $cObj->getRequest()->getQueryParams()['paginationId'];
-          if($paginationUniqueId == $paginationUniqueIdKey) {
+
+
+          $uniquePaginatorId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
+          $uniquePaginatorIdKey = $cObj->getRequest()->getQueryParams()['paginatorId'];
+
+          $uniquePaginatorName = $cObj->stdWrapValue('uniquePaginatorName', $paginationSettings ?? []);
+          $uniquePaginatorNameKey = $cObj->getRequest()->getQueryParams()['paginatorName'];
+
+
+          if(($uniquePaginatorId == $uniquePaginatorIdKey) OR ($uniquePaginatorId == $uniquePaginatorNameKey)) {
             $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
-          } else {
+          }
+            else {
             $currentPage = 1;
           }
           $uniquePaginatorName = $paginationSettings['uniquePaginatorName'] ? : 0;
           if ($uniquePaginatorName) {
-            $paginationArray = 'pagination_' . $paginationUniqueId;
+            $paginationArray = 'pagination_' . $uniquePaginatorId;
           } else {
             $paginationArray = 'pagination';
           }
@@ -92,14 +100,15 @@ class PaginatedMenuProcessor extends MenuProcessor
           $paginatedData = array(
           $processorConfiguration['as'] => $paginator->getPaginatedItems(),
             $paginationArray => array(
-              'uniqueId' => $paginationUniqueId,
+              'uniqueId' => $uniquePaginatorId,
               'numberOfPages' => $paginator->getNumberOfPages(),
               'currentPageNumber' => $paginator->getCurrentPageNumber(),
               'keyOfFirstPaginatedItem' => $paginator->getKeyOfFirstPaginatedItem(),
               'keyOfLastPaginatedItem' => $paginator->getKeyOfLastPaginatedItem(),
               'allPageNumbers' => $pagination->getAllPageNumbers(),
               'previousPageNumber' => $pagination->getPreviousPageNumber(),
-              'nextPageNumber' => $pagination->getNextPageNumber()
+              'nextPageNumber' => $pagination->getNextPageNumber(),
+              'uniquePaginatorName' => $uniquePaginatorName
             )
           );
           $allProcessedData = array_merge($allProcessedData, $paginatedData);
