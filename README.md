@@ -15,7 +15,7 @@
  - include static template
 
 ## Usage
-So far there's 3 dataProcessors available for now, see the TS section
+There's 3 dataProcessors available for now...
 
 **TypoScript Setup**
 ```
