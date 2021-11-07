@@ -22,8 +22,7 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
     ) {
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
-        $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
-
+        $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []) ? : 1);
         if ($paginationIsActive) {
           $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
           $paginationElementId = $processedData['data']['uid'];

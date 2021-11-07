@@ -23,7 +23,7 @@ So far there's 3 dataProcessors available for now, see the TS section
 10 {
   pagination {
     isActive = 1
-    # default 0
+    # default 1
     itemsPerPage = 6
     # default 10
   }
