@@ -20,7 +20,6 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
         array $processorConfiguration,
         array $processedData
     ) {
-      debug($processedData);
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
@@ -43,6 +42,8 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
             'pagination' => array(
               'numberOfPages' => $paginator->getNumberOfPages(),
               'currentPageNumber' => $paginator->getCurrentPageNumber(),
+              'keyOfFirstPaginatedItem' => $paginator->getKeyOfFirstPaginatedItem(),
+              'KeyOfLastPaginatedItem' => $paginator->getKeyOfLastPaginatedItem(),
               'allPageNumbers' => $pagination->getAllPageNumbers(),
               'previousPageNumber' => $pagination->getPreviousPageNumber(),
               'nextPageNumber' => $pagination->getNextPageNumber()

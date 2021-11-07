@@ -89,6 +89,8 @@ class PaginatedMenuProcessor extends MenuProcessor
             'pagination' => array(
               'numberOfPages' => $paginator->getNumberOfPages(),
               'currentPageNumber' => $paginator->getCurrentPageNumber(),
+              'keyOfFirstPaginatedItem' => $paginator->getKeyOfFirstPaginatedItem(),
+              'KeyOfLastPaginatedItem' => $paginator->getKeyOfLastPaginatedItem(),
               'allPageNumbers' => $pagination->getAllPageNumbers(),
               'previousPageNumber' => $pagination->getPreviousPageNumber(),
               'nextPageNumber' => $pagination->getNextPageNumber()
