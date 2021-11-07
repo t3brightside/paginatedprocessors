@@ -3,8 +3,5 @@
   page.includeCSS.paginatedprocessors = EXT:paginatedprocessors/Resources/Public/Styles/paginatedprocessors.css
 [END]
 
-lib.contentElement {
-  partialRootPaths {
-    345 = EXT:paginatedprocessors/Resources/Private/Partials
-  }
-}
+lib.contentElement.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
+page.10.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials

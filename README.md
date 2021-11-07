@@ -7,7 +7,7 @@
 
 ## System requirements
 
-- TYPO3
+- TYPO3 v11.5
 
 ## Installation
 
@@ -15,23 +15,29 @@
  - include static template
 
 ## Usage
-There's 3 dataProcessors available for now...
+Paginated processors available:
+- Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
+- Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
+- Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
-**TypoScript Setup**
+**TypoScript example**
 ```
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 10 {
   pagination {
     isActive = 1
-    # default 1
     itemsPerPage = 6
-    # default 10
+
+    # content element context, returns array 'pagination'
+    uniqueId.field = uid
+    uniquePaginatorName = 0
+
+    # in page context, returns array 'pagination_mypaginator'
+    uniqueId = mypaginator
+    uniquePaginatorName = 1
   }
   ...
 }
-
-Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
-Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
 ```
 **Template**
@@ -39,8 +45,13 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 <f:for each="{pages}" as="page" iteration="iterator">
   <f:render partial="List" arguments="{_all}" />
 </f:for>
+<!-- content element context -->
 <f:if condition="{pagination.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination}" />
+</f:if>
+<!-- page context -->
+<f:if condition="{pagination_mypaginator.numberOfPages} > 1">
+  <f:render partial="Pagination" arguments="{pagination:pagination_mypaginator}" />
 </f:if>
 ```
 **Route enhancers**

@@ -22,14 +22,20 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
     ) {
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
-        $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []) ? : 1);
+        $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
         if ($paginationIsActive) {
-          $paginationElementIdKey = (int)$cObj->getRequest()->getQueryParams()['paginationElementId'] ? : 1;
-          $paginationElementId = $processedData['data']['uid'];
-          if($paginationElementIdKey == $paginationElementId) {
+          $paginationUniqueId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
+          $paginationUniqueIdKey = $cObj->getRequest()->getQueryParams()['paginationId'];
+          if($paginationUniqueId == $paginationUniqueIdKey) {
             $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
           } else {
             $currentPage = 1;
+          }
+          $uniquePaginatorName = $paginationSettings['uniquePaginatorName'] ? : 0;
+          if ($uniquePaginatorName) {
+            $paginationArray = 'pagination_' . $paginationUniqueId;
+          } else {
+            $paginationArray = 'pagination';
           }
           $itemsToPaginate = $allProcessedData[$processorConfiguration['as']];
           $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? [])) ? : 10;
@@ -37,8 +43,9 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
           $pagination = new SimplePagination($paginator);
           $allProcessedData = array_diff_key($allProcessedData, array_flip([$processorConfiguration['as']]));
           $paginatedData = array(
-            $processorConfiguration['as'] => $paginator->getPaginatedItems(),
-            'pagination' => array(
+          $processorConfiguration['as'] => $paginator->getPaginatedItems(),
+            $paginationArray => array(
+              'uniqueId' => $paginationUniqueId,
               'numberOfPages' => $paginator->getNumberOfPages(),
               'currentPageNumber' => $paginator->getCurrentPageNumber(),
               'keyOfFirstPaginatedItem' => $paginator->getKeyOfFirstPaginatedItem(),
