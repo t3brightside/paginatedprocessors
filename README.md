@@ -29,10 +29,17 @@ Paginated processors available:
     itemsPerPage = 10
 
     # content element context, returns array 'pagination'
+    # URL example /21/2
     uniqueId.field = uid
     uniquePaginatorName = 0
 
+    # content element context, returns array 'pagination'
+    # URL example /gallery/2
+    # uniqueId = gallery
+    # uniquePaginatorName = 0
+
     # in page context, returns array 'pagination_gallery'
+    # URL example /gallery/2
     # uniqueId = gallery
     # uniquePaginatorName = 1
   }
@@ -57,18 +64,6 @@ Paginated processors available:
 **Route enhancers**
 ```
 routeEnhancers:
-  NamePaginatedprocessors:
-    type: Simple
-    routePath: '/{paginatorName}/{paginationPage}'
-    aspects:
-      paginatorName:
-        type: StaticValueMapper
-        map:
-          gallery: 'gallery'
-      paginationPage:
-        type: StaticRangeMapper
-        start: '0'
-        end: '900'
   UidPaginatedprocessors:
     type: Simple
     routePath: '/{paginatorId}/{paginationPage}'
@@ -81,6 +76,18 @@ routeEnhancers:
         type: StaticRangeMapper
         start: '0'
         end: '999'
+  NamePaginatedprocessors:
+    type: Simple
+    routePath: '/{paginatorName}/{paginationPage}'
+    aspects:
+      paginatorName:
+        type: StaticValueMapper
+        map:
+          gallery: 'gallery'
+      paginationPage:
+        type: StaticRangeMapper
+        start: '0'
+        end: '900'
 ```
 
 ## Sources
