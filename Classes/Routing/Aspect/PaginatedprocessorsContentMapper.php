@@ -42,8 +42,6 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
             )
             ->execute()
             ->rowCount();
-            debug($data);
-
             return $data;
     }
 }
