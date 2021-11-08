@@ -28,19 +28,21 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
     isActive = 1
     itemsPerPage = 10
 
-    # uniqueId is mandatory
-    # returns array 'pagination'
-    # URL example /21/2
+    ## uniqueId is mandatory
+    ## returns array 'pagination'
+    ## URL example /21/2
     uniqueId.field = uid
     uniquePaginatorName = 0
 
-    # returns array 'pagination'
-    # URL example /gallery/2
+    ## returns array 'pagination'
+    ## URL example /gallery/2
+    ## need to map uniqueId in routeEnhancers
     # uniqueId = gallery
     # uniquePaginatorName = 0
 
-    # returns array 'pagination_gallery'
-    # URL example /gallery/2
+    ## returns array 'pagination_gallery'
+    ## URL example /gallery/2
+    ## need to map uniqueId in routeEnhancers
     # uniqueId = gallery
     # uniquePaginatorName = 1
   }
