@@ -45,7 +45,7 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
     ## returns array 'pagination_gallery'
     ## URL example /gallery/2
-    ## need to map in routeEnhancers
+    ## need to map in routeEnhancers, see PaginatedprocessorsByUnigueIdInTs
     # uniqueId = gallery
     # uniquePaginatorName = 1
   }
@@ -69,7 +69,7 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 **Route enhancers**
 ```
 routeEnhancers:
-  UidPaginatedprocessors:
+  PaginatedprocessorsByContentId:
     type: Simple
     routePath: '/{paginatorId}/{paginationPage}'
     aspects:
@@ -79,11 +79,11 @@ routeEnhancers:
         type: StaticRangeMapper
         start: '0'
         end: '999'
-  NamePaginatedprocessors:
+  PaginatedprocessorsByUnigueIdInTs:
     type: Simple
-    routePath: '/{paginatorName}/{paginationPage}'
+    routePath: '/{paginatorId}/{paginationPage}'
     aspects:
-      paginatorName:
+      paginatorId:
         type: StaticValueMapper
         map:
           files: files
@@ -91,7 +91,7 @@ routeEnhancers:
       paginationPage:
         type: StaticRangeMapper
         start: '0'
-        end: '900'
+        end: '999'
 ```
 
 ## Sources

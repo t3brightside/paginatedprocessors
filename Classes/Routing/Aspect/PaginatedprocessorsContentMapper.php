@@ -33,14 +33,17 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
     protected function isValidContentElementUid($value): bool
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
-        return (bool)$queryBuilder
+        $data = (bool)$queryBuilder
             ->select('uid')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($value)),
-                $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter('1'))
+                $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter(true))
             )
             ->execute()
             ->rowCount();
+            debug($data);
+
+            return $data;
     }
 }
