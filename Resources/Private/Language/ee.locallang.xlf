@@ -9,9 +9,6 @@
 			<trans-unit id="pagination.next">
 				<target state="translated">Järgmine</target>
 			</trans-unit>
-			<trans-unit id="pagination.aria.navigation" xml:space="preserve">
-				<source>Kirjetelehitseja</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -9,15 +9,6 @@
 			<trans-unit id="pagination.next" xml:space="preserve">
 				<source>Next</source>
 			</trans-unit>
-			<trans-unit id="pagination.aria.previous" xml:space="preserve">
-				<source>Previous page</source>
-			</trans-unit>
-			<trans-unit id="pagination.aria.next" xml:space="preserve">
-				<source>Next page</source>
-			</trans-unit>
-			<trans-unit id="pagination.aria.navigation" xml:space="preserve">
-				<source>Pagination navigation</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
