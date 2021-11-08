@@ -29,17 +29,17 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
     itemsPerPage = 10
 
     # uniqueId is mandatory
-    # content element context, returns array 'pagination'
+    # returns array 'pagination'
     # URL example /21/2
     uniqueId.field = uid
     uniquePaginatorName = 0
 
-    # content element context, returns array 'pagination'
+    # returns array 'pagination'
     # URL example /gallery/2
     # uniqueId = gallery
     # uniquePaginatorName = 0
 
-    # in page context, returns array 'pagination_gallery'
+    # returns array 'pagination_gallery'
     # URL example /gallery/2
     # uniqueId = gallery
     # uniquePaginatorName = 1
