@@ -38,13 +38,13 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
     ## returns array 'pagination'
     ## URL example /gallery/2
-    ## need to map uniqueId in routeEnhancers
+    ## need to map in routeEnhancers
     # uniqueId = gallery
     # uniquePaginatorName = 0
 
     ## returns array 'pagination_gallery'
     ## URL example /gallery/2
-    ## need to map uniqueId in routeEnhancers
+    ## need to map in routeEnhancers
     # uniqueId = gallery
     # uniquePaginatorName = 1
   }
