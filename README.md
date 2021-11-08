@@ -15,11 +15,11 @@
  - include static template
 
 ## Usage
-Paginated processors available:
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
-- Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
-
+```
+Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
+Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
+Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
+```
 **TypoScript example**
 ```
 10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
@@ -28,6 +28,7 @@ Paginated processors available:
     isActive = 1
     itemsPerPage = 10
 
+    # uniqueId is mandatory
     # content element context, returns array 'pagination'
     # URL example /21/2
     uniqueId.field = uid
@@ -45,7 +46,6 @@ Paginated processors available:
   }
   ...
 }
-
 ```
 **Template**
 ```XML
