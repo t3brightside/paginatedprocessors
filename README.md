@@ -74,9 +74,7 @@ routeEnhancers:
     routePath: '/{paginatorId}/{paginationPage}'
     aspects:
       paginatorId:
-        type: PersistedAliasMapper
-        tableName: 'tt_content'
-        routeFieldName: 'uid'
+        type: PaginatedprocessorsContentMapper
       paginationPage:
         type: StaticRangeMapper
         start: '0'
@@ -88,7 +86,8 @@ routeEnhancers:
       paginatorName:
         type: StaticValueMapper
         map:
-          gallery: 'gallery'
+          files: files
+          gallery: gallery
       paginationPage:
         type: StaticRangeMapper
         start: '0'
