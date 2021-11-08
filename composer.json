@@ -4,6 +4,7 @@
 	"description": "Paginated dataprocessors for TYPO3",
 	"keywords": ["TYPO3","pagination","dataProcessing"],
 	"version": "0.1.0",
+	"license": "GPL-2.0-or-later",
 	"homepage": "https://github.com/t3brightside/paginatedprocessors",
 	"authors": [
 		{
@@ -13,9 +14,6 @@
       "homepage": "https://t3brightside.com"
 		}
 	],
-	"license": [
-    "GPL-2.0-or-later"
-  ],
 	"require": {
 		"typo3/cms-core": "^11.5"
 	},
