@@ -9,7 +9,7 @@ use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 
 /**
- * Adds pagination API to the DatabaseQueryProcessor
+ * Adds pagination interface to the MenuProcessor
  */
 
 class PaginatedMenuProcessor extends MenuProcessor
