@@ -71,15 +71,10 @@ class PaginatedMenuProcessor extends MenuProcessor
         $paginationSettings = $processorConfiguration['pagination.'];
         $paginationIsActive = (int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []));
         if ($paginationIsActive) {
-
-
           $uniquePaginatorId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
           $uniquePaginatorIdKey = $cObj->getRequest()->getQueryParams()['paginatorId'];
-
           $uniquePaginatorName = $cObj->stdWrapValue('uniquePaginatorName', $paginationSettings ?? []);
           $uniquePaginatorNameKey = $cObj->getRequest()->getQueryParams()['paginatorName'];
-
-
           if(($uniquePaginatorId == $uniquePaginatorIdKey) OR ($uniquePaginatorId == $uniquePaginatorNameKey)) {
             $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
           }
