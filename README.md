@@ -13,6 +13,8 @@
 
  - **composer req t3brightside/paginatedprocessors** or from TER **paginatedprocessors**
  - include static template
+ - Enable default CSS from constant editor or set:<br /> **paginatedprocessors.enableDefaultStyles = 1**
+
 
 ## Usage
 ```
