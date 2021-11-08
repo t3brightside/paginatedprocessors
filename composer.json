@@ -2,11 +2,8 @@
 	"name": "t3brightside/paginatedprocessors",
 	"type": "typo3-cms-extension",
 	"description": "Paginated dataprocessors for TYPO3",
-	"keywords": [
-		"TYPO3",
-		"pagination",
-		"dataProcessing"
-	],
+	"keywords": ["TYPO3","pagination","dataProcessing"],
+	"version": "0.1.0",
 	"homepage": "https://github.com/t3brightside/paginatedprocessors",
 	"authors": [
 		{
