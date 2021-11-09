@@ -27,6 +27,6 @@
 		}
 	},
 	"archive": {
-      "exclude": [".*"]
+      "exclude": ["/.*"]
   }
 }
