@@ -25,5 +25,8 @@
 		"typo3/cms": {
 			"extension-key": "paginatedprocessors"
 		}
-	}
+	},
+	"archive": {
+      "exclude": [".*"]
+  }
 }
