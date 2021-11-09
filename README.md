@@ -1,5 +1,5 @@
 # Paginatedprocessors
-[![Software License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg?style=flat)](LICENSE.txt)
+[![License](https://poser.pugx.org/t3brightside/paginatedprocessors/license)](LICENSE.txt)
 [![Packagist](https://img.shields.io/packagist/v/t3brightside/paginatedprocessors.svg?style=flat)](https://packagist.org/packages/t3brightside/paginatedprocessors)
 [![Downloads](https://poser.pugx.org/t3brightside/paginatedprocessors/downloads)](https://packagist.org/packages/t3brightside/paginatedprocessors)
 [![Brightside](https://img.shields.io/badge/by-t3brightside.com-orange.svg?style=flat)](https://t3brightside.com)
@@ -7,15 +7,12 @@
 **TYPO3 CMS dataProcessors with pagination**
 
 ## System requirements
-
 - TYPO3 v11.5
 
 ## Installation
-
- - **composer req t3brightside/paginatedprocessors** or from TER **paginatedprocessors**
- - include static template
- - Enable default CSS from constant editor or set:<br /> **paginatedprocessors.enableDefaultStyles = 1**
-
+ - **composer req t3brightside/paginatedprocessors** or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
+ - Include static template
+ - Enable default CSS from constant editor: **paginatedprocessors.enableDefaultStyles = 1**
 
 ## Usage
 ```
@@ -95,11 +92,9 @@ routeEnhancers:
 ```
 
 ## Sources
-
 -  [GitHub](https://github.com/t3brightside/paginatedprocessors)
 -  [Packagist](https://packagist.org/packages/t3brightside/paginatedprocessors)
 -  [TER](https://extensions.typo3.org/extension/paginatedprocessors/)
 
 ## Development and maintenance
-
 [Brightside OÜ – TYPO3 development and hosting specialised web agency](https://t3brightside.com/ )
