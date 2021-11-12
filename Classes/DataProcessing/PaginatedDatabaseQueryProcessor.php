@@ -26,15 +26,12 @@ class PaginatedDatabaseQueryProcessor extends DatabaseQueryProcessor
         if ($paginationIsActive) {
           $uniquePaginatorId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
           $uniquePaginatorIdKey = $cObj->getRequest()->getQueryParams()['paginatorId'];
-          $uniquePaginatorName = $cObj->stdWrapValue('uniquePaginatorName', $paginationSettings ?? []);
-          $uniquePaginatorNameKey = $cObj->getRequest()->getQueryParams()['paginatorName'];
-          if(($uniquePaginatorId == $uniquePaginatorIdKey) OR ($uniquePaginatorId == $uniquePaginatorNameKey)) {
+          if($uniquePaginatorId == $uniquePaginatorIdKey) {
             $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
-          }
-            else {
+          } else {
             $currentPage = 1;
           }
-          $uniquePaginatorName = $paginationSettings['uniquePaginatorName'] ? : 0;
+          $uniquePaginatorName = $cObj->stdWrapValue('uniquePaginatorName', $paginationSettings ?? []);
           if ($uniquePaginatorName) {
             $paginationArray = 'pagination_' . $uniquePaginatorId;
           } else {
