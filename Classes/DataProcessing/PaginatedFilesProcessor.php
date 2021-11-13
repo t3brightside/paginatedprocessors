@@ -42,11 +42,12 @@ class PaginatedFilesProcessor extends FilesProcessor
           }
           $itemsToPaginate = $allProcessedData[$processorConfiguration['as']];
           $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? [])) ? : 10;
+          $pageLinksShown = (int)($cObj->stdWrapValue('pageLinksShown', $paginationSettings ?? [])) ? : 0;
           $paginator = new ArrayPaginator($itemsToPaginate, $currentPage, $itemsPerPage);
           $pagination = new SimplePagination($paginator);
           $allProcessedData = array_diff_key($allProcessedData, array_flip([$processorConfiguration['as']]));
           $paginatedData = array(
-          $processorConfiguration['as'] => $paginator->getPaginatedItems(),
+            $processorConfiguration['as'] => $paginator->getPaginatedItems(),
             $paginationArray => array(
               'uniqueId' => $uniquePaginatorId,
               'numberOfPages' => $paginator->getNumberOfPages(),
@@ -56,7 +57,8 @@ class PaginatedFilesProcessor extends FilesProcessor
               'allPageNumbers' => $pagination->getAllPageNumbers(),
               'previousPageNumber' => $pagination->getPreviousPageNumber(),
               'nextPageNumber' => $pagination->getNextPageNumber(),
-              'uniquePaginatorName' => $uniquePaginatorName
+              'uniquePaginatorName' => $uniquePaginatorName,
+              'pageLinksShown' => $pageLinksShown
             )
           );
           $allProcessedData = array_merge($allProcessedData, $paginatedData);

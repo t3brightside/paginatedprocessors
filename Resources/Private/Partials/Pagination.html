@@ -1,26 +1,31 @@
+<f:if condition="{pagination.pageLinksShown} != 1">
+	<f:if condition="{pagination.pageLinksShown} && {pagination.numberOfPages} > {pagination.pageLinksShown + 3}">
+		<f:then><f:render section="limitedLinksPaginatior" arguments="{_all}" /></f:then>
+		<f:else><f:render section="simplePaginatior" arguments="{_all}" /></f:else>
+	</f:if>
+</f:if>
+<f:if condition="{pagination.pageLinksShown} == 1">
+	<f:render section="backAndForthPaginator" arguments="{_all}" />
+</f:if>
+
+<!-- Simple pagination without page link control -->
+<f:section name="simplePaginatior">
 	<ul class="pagination">
 		<f:if condition="{pagination.previousPageNumber}">
 			<li class="previous">
 				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
 			</li>
 		</f:if>
-		<f:for each="{pagination.allPageNumbers}" as="currentPage" iteration="iterator">
-			<f:if condition="{currentPage} == {pagination.currentPageNumber}">
+		<f:for each="{pagination.allPageNumbers}" as="page">
+			<f:if condition="{page} == {pagination.currentPageNumber}">
 				<f:then>
 					<li class="current">
-						{currentPage}
+						{page}
 					</li>
 				</f:then>
 				<f:else>
 					<li>
-						<f:if condition="{iterator.isFirst}">
-							<f:then>
-								<f:link.page>{currentPage}</f:link.page>
-							</f:then>
-							<f:else>
-								<f:link.page additionalParams="{paginationPage: currentPage, paginatorId: pagination.uniqueId}">{currentPage}</f:link.page>
-							</f:else>
-						</f:if>
+							<f:link.page additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
 					</li>
 				</f:else>
 			</f:if>
@@ -31,3 +36,98 @@
 			</li>
 		</f:if>
 	</ul>
+</f:section>
+
+<!-- Pagination links controlled with 'pageLinksShown' -->
+<f:section name="limitedLinksPaginatior">
+	<f:variable name="pageLinksShown">{pagination.pageLinksShown - 1}</f:variable>
+	<f:variable name="offSet">{pageLinksShown / 2}</f:variable>
+	<f:variable name="offSetLeft">{pagination.currentPageNumber - offSet}</f:variable>
+
+	<f:if condition="{pageLinksShown - pagination.currentPageNumber} >= {offSet}">
+		<f:then><f:variable name="offSetRight">{pagination.pageLinksShown}</f:variable></f:then>
+		<f:else><f:variable name="offSetRight"><f:format.number decimals="0">{pagination.currentPageNumber + offSet}</f:format.number></f:variable></f:else>
+	</f:if>
+
+	<f:variable name="pagesToEnd">{pagination.numberOfPages - pagination.currentPageNumber}</f:variable>
+	<f:variable name="offSetEnd">{pageLinksShown - pagesToEnd}</f:variable>
+	<f:if condition="{pageLinksShown - pagesToEnd} > {pagesToEnd}">
+		<f:variable name="offSetLeft">{pagination.currentPageNumber - offSetEnd}</f:variable>
+	</f:if>
+
+	<ul class="pagination">
+		<f:if condition="{pagination.previousPageNumber}">
+			<li class="previous">
+				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
+			</li>
+		</f:if>
+			<f:if condition="{pagination.currentPageNumber} == 1">
+				<f:then>
+					<li class="current">1</li>
+				</f:then>
+				<f:else>
+					<li><f:link.page>1</f:link.page></li>
+				</f:else>
+			</f:if>
+		<f:if condition="{pagination.currentPageNumber} > {offSet +2} && {pagination.pageLinksShown} > 1">
+			<li class="separator">…</li>
+		</f:if>
+		<f:for each="{pagination.allPageNumbers}" as="page" iteration="iterator">
+			<f:if condition="{iterator.cycle} >= {offSetLeft} && {iterator.cycle} <= {offSetRight} && {iterator.isFirst} != 1 && {iterator.isLast} != 1">
+				<f:if condition="{page} == {pagination.currentPageNumber}">
+					<f:then>
+						<li class="current">{page}</li>
+					</f:then>
+					<f:else>
+						<li class="first">
+							<f:link.page additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
+						</li>
+					</f:else>
+				</f:if>
+			</f:if>
+		</f:for>
+		<f:if condition="{pagination.currentPageNumber + offSet +1} < {pagination.numberOfPages}  && {pagination.pageLinksShown} > 1">
+			<li class="separator">…</li>
+		</f:if>
+		<f:if condition="{pagination.pageLinksShown} > 1">
+			<f:if condition="{pagination.currentPageNumber} == {pagination.numberOfPages}">
+				<f:then>
+					<li class="current">{pagination.numberOfPages}</li>
+				</f:then>
+				<f:else>
+					<li><f:link.page additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}">{pagination.numberOfPages}</f:link.page></li>
+				</f:else>
+			</f:if>
+		</f:if>
+		<f:if condition="{pagination.nextPageNumber}">
+			<li class="next">
+				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
+			</li>
+		</f:if>
+	</ul>
+</f:section>
+
+<!-- Pagination with back and forth arrows and active page number, shown if 'pageLinksShown = 1' -->
+<f:section name="backAndForthPaginator">
+	<ul class="pagination">
+		<f:if condition="{pagination.previousPageNumber}">
+			<li class="first">
+				<f:link.page title="{f:translate(key:'pagination.first', extensionName: 'paginatedprocessors')}"><<</f:link.page>
+			</li>
+			<li class="previous">
+				<f:link.page additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><</f:link.page>
+			</li>
+		</f:if>
+		<li class="current">
+				{pagination.currentPageNumber} / {pagination.numberOfPages}
+		</li>
+		<f:if condition="{pagination.nextPageNumber}">
+			<li class="next">
+				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
+			</li>
+			<li class="last">
+				<f:link.page additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.last', extensionName: 'paginatedprocessors')}">>></f:link.page>
+			</li>
+		</f:if>
+	</ul>
+</f:section>

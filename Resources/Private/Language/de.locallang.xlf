@@ -9,6 +9,12 @@
 			<trans-unit id="pagination.next">
 				<target state="translated">Nächste</target>
 			</trans-unit>
+			<trans-unit id="pagination.first">
+				<target state="translated">Erste</target>
+			</trans-unit>
+			<trans-unit id="pagination.last">
+				<target state="translated">Letzte</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

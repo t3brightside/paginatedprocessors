@@ -9,6 +9,12 @@
 			<trans-unit id="pagination.next" xml:space="preserve">
 				<source>Next</source>
 			</trans-unit>
+			<trans-unit id="pagination.first" xml:space="preserve">
+				<source>First</source>
+			</trans-unit>
+			<trans-unit id="pagination.last" xml:space="preserve">
+				<source>Last</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

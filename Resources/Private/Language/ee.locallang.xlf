@@ -9,6 +9,12 @@
 			<trans-unit id="pagination.next">
 				<target state="translated">Järgmine</target>
 			</trans-unit>
+			<trans-unit id="pagination.first">
+				<target state="translated">Esimene</target>
+			</trans-unit>
+			<trans-unit id="pagination.last">
+				<target state="translated">Viimane</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

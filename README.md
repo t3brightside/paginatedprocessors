@@ -9,12 +9,21 @@
 ## System requirements
 - TYPO3 v11.5
 
+## Features
+- PaginatedDatabaseQueryProcessor
+- PaginatedFilesProcessor
+- PaginatedMenuProcessor
+- Pagination on/off
+- Number of items per page
+- Number of pagination links
+
 ## Installation
  - **composer req t3brightside/paginatedprocessors** or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
  - Include static template
  - Enable default CSS from constant editor: **paginatedprocessors.enableDefaultStyles = 1**
 
 ## Usage
+**Available DataProcessors**
 ```
 Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor
 Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
@@ -26,7 +35,13 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 10 {
   pagination {
     isActive = 1
+    # isActive.field = tx_paginatedprocessors_paginationenabled
+
     itemsPerPage = 10
+    itemsPerPage.override.field = tx_paginatedprocessors_itemsperpage
+
+    pageLinksShown = 7
+    pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
 
     ## uniqueId is mandatory
     ## returns array 'pagination'
@@ -36,9 +51,8 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
     ## returns array 'pagination'
     ## URL example /gallery/2
-    ## need to map in routeEnhancers
+    ## need to map in routeEnhancers, see PaginatedprocessorsByUnigueIdInTs
     # uniqueId = gallery
-    # uniquePaginatorName = 0
 
     ## returns array 'pagination_gallery'
     ## URL example /gallery/2
@@ -49,6 +63,17 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
   ...
 }
 ```
+**Pagination links examples**
+```
+pageLinksShown = 1
+[<<][<][-4/12-][>][>>]
+
+pageLinksShown = 0 or is bigger + 2 than amount of pages
+[<][1][2][-3-][4][5][>]
+
+pageLinksShown = 5
+[<][1]…[5][6][-7-][8][9]…[60][>]
+```
 **Template**
 ```XML
 <f:for each="{pages}" as="page" iteration="iterator">
@@ -58,7 +83,7 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 <f:if condition="{pagination.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination}" />
 </f:if>
-<!-- page context -->
+<!-- page context with uniquePaginatorName turned on -->
 <f:if condition="{pagination_gallery.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination_gallery}" />
 </f:if>
