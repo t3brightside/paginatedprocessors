@@ -10,7 +10,7 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
 {
     public function generate(string $value): ?string
     {
-        if ($this->isValidContentElementUid($value)) {
+        if (($this->isValidContentElementUid($value)) OR ($this->isValidContentElementPaginatedprocessorsUrlsegment($value))) {
             return $value;
         }
         return null;
@@ -18,7 +18,7 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
 
     public function resolve(string $value): ?string
     {
-        if ($this->isValidContentElementUid($value)) {
+        if (($this->isValidContentElementUid($value)) OR ($this->isValidContentElementPaginatedprocessorsUrlsegment($value))) {
             return $value;
         }
         return null;
@@ -38,6 +38,26 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($value)),
+                $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter(true))
+            )
+            ->execute()
+            ->rowCount();
+            return $data;
+    }
+    /**
+     * Validate, if $value is a valid tx_paginatedprocessors_slug in tt_content
+     *
+     * @param mixed $tx_paginatedprocessors_slug
+     * @return bool
+     */
+    protected function isValidContentElementPaginatedprocessorsUrlsegment($value): bool
+    {
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $data = (bool)$queryBuilder
+            ->select('tx_paginatedprocessors_urlsegment')
+            ->from('tt_content')
+            ->where(
+                $queryBuilder->expr()->eq('tx_paginatedprocessors_urlsegment', $queryBuilder->createNamedParameter($value)),
                 $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter(true))
             )
             ->execute()
