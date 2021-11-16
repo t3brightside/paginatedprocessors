@@ -16,11 +16,13 @@
 - Pagination on/off
 - Number of items per page
 - Number of pagination links
+- URL Segment from content element or TypoScript
 
-## Installation
- - **composer req t3brightside/paginatedprocessors** or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
- - Include static template
- - Enable default CSS from constant editor: **paginatedprocessors.enableDefaultStyles = 1**
+## Installation & Updates
+- **composer req t3brightside/paginatedprocessors** or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
+- Include static template
+- Enable default CSS from constant editor: **paginatedprocessors.enableDefaultStyles = 1**
+- See the [ChangeLog](ChangeLog) for updates and breaking changes
 
 ## Usage
 **Available DataProcessors**
@@ -63,12 +65,12 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
   ...
 }
 ```
-**Pagination links examples**
+**Pagination link control examples**
 ```
 pageLinksShown = 1
 [<<][<][-4/12-][>][>>]
 
-pageLinksShown = 0 or is bigger + 2 than amount of pages
+pageLinksShown = 0 or is bigger than amount of pages + 2
 [<][1][2][-3-][4][5][>]
 
 pageLinksShown = 5
@@ -115,7 +117,8 @@ routeEnhancers:
         start: '0'
         end: '999'
 ```
-
+## In third party extensions
+There's TCA for 'tt_content' to control Paginatedprocessors in your own content element or extension. See: [tt_content.php](Configuration/Overrides/tt_content.php)
 ## Sources
 -  [GitHub](https://github.com/t3brightside/paginatedprocessors)
 -  [Packagist](https://packagist.org/packages/t3brightside/paginatedprocessors)
