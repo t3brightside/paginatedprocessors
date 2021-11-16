@@ -81,7 +81,6 @@ pageLinksShown = 5
 <f:for each="{pages}" as="page" iteration="iterator">
   <f:render partial="List" arguments="{_all}" />
 </f:for>
-<!-- content element context -->
 <f:if condition="{pagination.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination}" />
 </f:if>
