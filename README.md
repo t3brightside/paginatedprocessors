@@ -84,7 +84,7 @@ pageLinksShown = 5
 <f:if condition="{pagination.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination}" />
 </f:if>
-<!-- page context with uniquePaginatorName turned on -->
+<!-- with uniquePaginatorName turned on -->
 <f:if condition="{pagination_gallery.numberOfPages} > 1">
   <f:render partial="Pagination" arguments="{pagination:pagination_gallery}" />
 </f:if>
