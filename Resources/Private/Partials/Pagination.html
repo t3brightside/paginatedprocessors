@@ -131,7 +131,7 @@
 <!-- Pagination with back and forth arrows and active page number, shown if 'pageLinksShown = 1' -->
 <f:section name="backAndForthPaginator">
 	<ul class="pagination">
-		<f:if condition="{pagination.previousPageNumber}">
+		<f:if condition="{pagination.previousPageNumber} && {pagination.numberOfPages} > 2">
 			<li class="first">
 				<f:link.page title="{f:translate(key:'pagination.first', extensionName: 'paginatedprocessors')}"><<</f:link.page>
 			</li>
@@ -155,9 +155,11 @@
 			<li class="next">
 				<f:link.page additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}">></f:link.page>
 			</li>
-			<li class="last">
-				<f:link.page additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.last', extensionName: 'paginatedprocessors')}">>></f:link.page>
-			</li>
+			<f:if condition="{pagination.numberOfPages} > 2">
+				<li class="last">
+					<f:link.page additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.last', extensionName: 'paginatedprocessors')}">>></f:link.page>
+				</li>
+			</f:if>
 		</f:if>
 	</ul>
 </f:section>
