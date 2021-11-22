@@ -1,9 +1,9 @@
 <?php
+
   defined('TYPO3_MODE') || die('Access denied.');
 
   call_user_func(function () {
-/* Define columns added to tt_content */
-    $tempColumnsPaginatedprocessors = array(
+      $tempColumnsPaginatedprocessors = array(
       'tx_paginatedprocessors_paginationenabled' => [
         'exclude' => 1,
         'label' => 'Enabled',
@@ -60,11 +60,11 @@
     );
 
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsPaginatedprocessors);
-    $GLOBALS['TCA']['tt_content']['palettes']['paginatedprocessors']['showitem'] = '
+      \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumnsPaginatedprocessors);
+      $GLOBALS['TCA']['tt_content']['palettes']['paginatedprocessors']['showitem'] = '
       tx_paginatedprocessors_paginationenabled,
       tx_paginatedprocessors_itemsperpage,
       tx_paginatedprocessors_pagelinksshown,
       tx_paginatedprocessors_urlsegment,
     ';
-});
+  });

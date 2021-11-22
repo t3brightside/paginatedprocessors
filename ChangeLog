@@ -1,5 +1,7 @@
 * 1.1.0
-  - [FEATURE] control number of pagination links
-  – [FEATURE] URL segment with automatic route mapping for content elements
-  - [FEATURE] tt_content TCA for easier third party migration
-  - [UPDATE] compare and update the database
+    - [FEATURE] control number of pagination links
+    – [FEATURE] URL segment with automatic route mapping for content elements
+    - [FEATURE] tt_content TCA for easier third party migration
+    - [UPDATE] compare and update the database
+* 1.2.0
+    - [FEATURE] create Classes/Processing/DataToPaginatedData::getPaginateData

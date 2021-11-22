@@ -1,28 +1,26 @@
 {
-	"name": "t3brightside/paginatedprocessors",
-	"type": "typo3-cms-extension",
-	"description": "Paginated dataprocessors for TYPO3",
-	"keywords": ["TYPO3","pagination","dataProcessing"],
-	"license": "GPL-2.0-or-later",
-  "homepage": "https://t3brightside.com",
-  "authors": [
-      {
-          "name": "Tanel Põld",
-          "role": "Developer",
-					"homepage": "https://t3brightside.com"
-      }
-  ],
-	"require": {
-		"typo3/cms-core": "^11.5"
-	},
-	"autoload": {
-		"psr-4": {
-			"Brightside\\Paginatedprocessors\\": "Classes"
-		}
-	},
-	"extra": {
-		"typo3/cms": {
-			"extension-key": "paginatedprocessors"
-		}
-	}
+    "name": "t3brightside/paginatedprocessors",
+    "type": "typo3-cms-extension",
+    "description": "Paginated dataprocessors for TYPO3",
+    "keywords": ["TYPO3", "pagination", "dataProcessing"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://t3brightside.com",
+    "authors": [{
+        "name": "Tanel Põld",
+        "role": "Developer",
+        "homepage": "https://t3brightside.com"
+    }],
+    "require": {
+        "typo3/cms-core": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brightside\\Paginatedprocessors\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "paginatedprocessors"
+        }
+    }
 }

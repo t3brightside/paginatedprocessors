@@ -1,7 +1,6 @@
 <?php
 namespace Brightside\Paginatedprocessors\Routing\Aspect;
 
-
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Routing\Aspect\StaticMappableAspectInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
