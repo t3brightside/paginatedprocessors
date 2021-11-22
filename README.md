@@ -116,8 +116,9 @@ routeEnhancers:
         start: '0'
         end: '999'
 ```
-## In third party extensions
-There's TCA for 'tt_content' to control Paginatedprocessors in your own content element or extension. See: [tt_content.php](Configuration/Overrides/tt_content.php)
+## In your own extensions
+Use Classes/Processing/DataToPaginatedData in your own custom dataProcessors.
+And there's TCA for 'tt_content' to add Paginatedprocessors to your own content elements. See: [tt_content.php](Configuration/Overrides/tt_content.php)
 ## Sources
 -  [GitHub](https://github.com/t3brightside/paginatedprocessors)
 -  [Packagist](https://packagist.org/packages/t3brightside/paginatedprocessors)

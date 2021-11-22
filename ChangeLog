@@ -4,4 +4,5 @@
     - [FEATURE] tt_content TCA for easier third party migration
     - [UPDATE] compare and update the database
 * 1.2.0
-    - [FEATURE] create Classes/Processing/DataToPaginatedData::getPaginateData
+    - [FEATURE] create Classes/Processing/DataToPaginatedData::getPaginatedData
+    - [TASK] Improve code readability
