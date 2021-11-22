@@ -18,7 +18,7 @@ class PaginatedFilesProcessor extends FilesProcessor
       $paginationSettings = $processorConfiguration['pagination.'];
       if ((int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []))) {
         $paginatedData = new DataToPaginatedData();
-        $allProcessedData = $paginatedData->paginateData($cObj,$contentObjectConfiguration,$processorConfiguration,$allProcessedData,$allProcessedData[$processorConfiguration['as']],$processorConfiguration['as']);
+        $allProcessedData = $paginatedData->getPaginateData($cObj,$contentObjectConfiguration,$processorConfiguration,$allProcessedData,$allProcessedData[$processorConfiguration['as']],$processorConfiguration['as']);
         return $allProcessedData;
       } else {
         return $allProcessedData;

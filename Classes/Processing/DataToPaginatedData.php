@@ -6,16 +6,15 @@ use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 
 class DataToPaginatedData {
-  public function paginateData (
+  public function getPaginateData (
       ContentObjectRenderer $cObj,
       array $contentObjectConfiguration,
       array $processorConfiguration,
       array $allProcessedData,
       array $dataToPaginate,
-      $paginatedDataArrayKey
+      string $paginatedDataArrayKey
   ) {
     $paginationSettings = $processorConfiguration['pagination.'];
-
     $uniquePaginatorId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
     $uniquePaginatorIdKey = $cObj->getRequest()->getQueryParams()['paginatorId'];
     if($uniquePaginatorId == $uniquePaginatorIdKey) {
