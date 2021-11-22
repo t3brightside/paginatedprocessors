@@ -6,7 +6,7 @@ use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 
 class DataToPaginatedData {
-    public function getPaginateData (
+    public function getPaginatedData (
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
