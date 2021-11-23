@@ -123,6 +123,7 @@ routeEnhancers:
 --palette--;Pagination;paginatedprocessors,
 ```
 **Paginate a custom dataProcessor**
+
 Follow the comments in: [PaginatedDatabaseQueryProcessor.php](Classes/DataProcessing/PaginatedDatabaseQueryProcessor.php)
 ## Sources
 -  [GitHub](https://github.com/t3brightside/paginatedprocessors)
