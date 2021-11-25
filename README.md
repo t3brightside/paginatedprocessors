@@ -19,7 +19,7 @@
 - URL Segment from content element or TypoScript
 
 ## Installation & Updates
-- **composer req t3brightside/paginatedprocessors** or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
+- `composer req t3brightside/paginatedprocessors` or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
 - Include static template
 - Enable default CSS from constant editor: **paginatedprocessors.enableDefaultStyles = 1**
 - See the [ChangeLog](ChangeLog) for updates and breaking changes
@@ -90,7 +90,7 @@ pageLinksShown = 5
 </f:if>
 ```
 **Route enhancers**
-```
+```yaml
 routeEnhancers:
   PaginatedprocessorsByContentId:
     type: Simple
