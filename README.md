@@ -17,6 +17,7 @@
 - Number of items per page
 - Number of pagination links
 - URL Segment from content element or TypoScript
+- Anchor links to content element or custom id
 
 ## Installation & Updates
 - `composer req t3brightside/paginatedprocessors` or from TYPO3 extension repository **[paginatedprocessors](https://extensions.typo3.org/extension/paginatedprocessors/)**
@@ -44,6 +45,16 @@ Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor
 
     pageLinksShown = 7
     pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
+
+    ## configure anchor links
+    # anchorActive = 1
+    anchorActive.field = tx_paginatedprocessors_anchor
+    ## set element uid manually
+    # anchorId = 123
+    ## or current content element from uid field
+    anchorId.field = uid
+    # content uid overriden if custom anchor element set in pagination options
+    anchorId.override.field = tx_paginatedprocessors_anchorid
 
     ## uniqueId is mandatory
     ## returns array 'pagination'

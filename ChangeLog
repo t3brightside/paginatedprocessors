@@ -6,3 +6,5 @@
 * 1.2.0
     - [FEATURE] create Classes/Processing/DataToPaginatedData::getPaginatedData
     - [TASK] Improve code readability
+* 1.3.0
+    - [FEATURE] add anchor option to keep paginated content in focus

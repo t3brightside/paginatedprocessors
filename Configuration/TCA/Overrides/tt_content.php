@@ -55,7 +55,39 @@ $tempColumnsPaginatedprocessors = array(
                 'allowLanguageSynchronization' => true,
             ],
         ],
-    ]
+    ],
+    'tx_paginatedprocessors_anchor' => [
+        'exclude' => 1,
+        'label' => 'Anchor',
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+            'items' => [
+                [
+                    0 => '',
+                    1 => '',
+                ]
+            ],
+            'behaviour' => [
+                'allowLanguageSynchronization' => true,
+            ],
+        ],
+    ],
+    'tx_paginatedprocessors_anchorid' => [
+        'exclude' => 1,
+        'label' => 'Anchor to Custom Element',
+        'config' => [
+            'type' => 'group',
+            'internal_type' => 'db',
+            'allowed' => 'tt_content',
+            'default' => 0,
+            'size' => 1,
+            'autoSizeMax' => 1,
+            'maxitems' => 1,
+            'multiple' => 0,
+        ],
+    ],
 );
 
 // Use in your custom content element '--palette--;Pagination;paginatedprocessors,'
@@ -65,4 +97,7 @@ $GLOBALS['TCA']['tt_content']['palettes']['paginatedprocessors']['showitem'] = '
     tx_paginatedprocessors_itemsperpage,
     tx_paginatedprocessors_pagelinksshown,
     tx_paginatedprocessors_urlsegment,
+    --linebreak--,
+    tx_paginatedprocessors_anchor,
+    tx_paginatedprocessors_anchorid,
 ';
