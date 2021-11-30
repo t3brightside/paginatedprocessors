@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf" date="2021-11-30T11:12:32Z" product-name="paginatedprocessors">
+		<header/>
+		<body>
+			<trans-unit id="palettes.pagination" resname="palettes.pagination">
+				<source>Pagination</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_paginationenabled" resname="tx_paginatedprocessors_paginationenabled">
+				<source>Pagination</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_itemsperpage" resname="tx_paginatedprocessors_itemsperpage">
+				<source>Items per Page</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_pagelinksshown" resname="tx_paginatedprocessors_pagelinksshown">
+				<source>Links Shown</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_urlsegment" resname="tx_paginatedprocessors_urlsegment">
+				<source>URL Segment</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_anchor" resname="tx_paginatedprocessors_anchor">
+				<source>Anchor</source>
+			</trans-unit>
+			<trans-unit id="tx_paginatedprocessors_anchorid" resname="tx_paginatedprocessors_anchorid">
+				<source>Custom Anchor</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

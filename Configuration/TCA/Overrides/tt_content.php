@@ -5,7 +5,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 $tempColumnsPaginatedprocessors = array(
     'tx_paginatedprocessors_paginationenabled' => [
         'exclude' => 1,
-        'label' => 'Enabled',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_paginationenabled',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -22,7 +22,7 @@ $tempColumnsPaginatedprocessors = array(
     ],
     'tx_paginatedprocessors_itemsperpage' => [
         'exclude' => 1,
-        'label' => 'Items per page',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_itemsperpage',
         'config' => [
             'type' => 'input',
             'eval' => 'num',
@@ -34,7 +34,7 @@ $tempColumnsPaginatedprocessors = array(
     ],
     'tx_paginatedprocessors_pagelinksshown' => [
         'exclude' => 1,
-        'label' => 'Number of links',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_pagelinksshown',
         'config' => [
             'type' => 'input',
             'eval' => 'num',
@@ -46,7 +46,7 @@ $tempColumnsPaginatedprocessors = array(
     ],
     'tx_paginatedprocessors_urlsegment' => [
         'exclude' => 1,
-        'label' => 'URL Segment',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_urlsegment',
         'config' => [
             'type' => 'input',
             'eval' => 'uniqueInPid,nospace,lower,trim',
@@ -58,7 +58,7 @@ $tempColumnsPaginatedprocessors = array(
     ],
     'tx_paginatedprocessors_anchor' => [
         'exclude' => 1,
-        'label' => 'Anchor',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_anchor',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -76,7 +76,7 @@ $tempColumnsPaginatedprocessors = array(
     ],
     'tx_paginatedprocessors_anchorid' => [
         'exclude' => 1,
-        'label' => 'Anchor to Custom Element',
+        'label' => 'LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:tx_paginatedprocessors_anchorid',
         'config' => [
             'type' => 'group',
             'internal_type' => 'db',
