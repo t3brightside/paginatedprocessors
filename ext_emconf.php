@@ -2,14 +2,14 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Paginated Processors',
-    'description' => 'Paginated data processors',
+    'description' => 'Data processors with pagination',
     'category' => 'fe',
     'author' => 'Tanel Põld',
     'author_email' => 'tanel@brightside.ee',
     'author_company' => 'Brightside OÜ / t3brightside.com',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '1.3.0',
+    'version' => '1.3.1',
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
