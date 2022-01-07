@@ -10,3 +10,6 @@
     - [FEATURE] add anchor option to keep paginated content in focus
 * 1.3.1
     - [LANGUAGE] move TCA labels to translation file
+* 1.3.2
+    - [BUGFIX] by Willi Wehmeier: Use null coalescing operator to avoid error on
+      non existing array key
