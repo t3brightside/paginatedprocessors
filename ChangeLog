@@ -13,3 +13,5 @@
 * 1.3.2
     - [BUGFIX] by Willi Wehmeier: Use null coalescing operator to avoid error on
       non existing array key
+* 1.3.3
+  - [BUGFIX] eliminate Undefined array key Warning if anchorId by setting default 0
