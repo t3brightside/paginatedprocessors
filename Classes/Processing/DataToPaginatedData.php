@@ -32,9 +32,7 @@ class DataToPaginatedData {
         $itemsPerPage = (int)($cObj->stdWrapValue('itemsPerPage', $paginationSettings ?? [])) ? : 10;
         $pageLinksShown = (int)($cObj->stdWrapValue('pageLinksShown', $paginationSettings ?? [])) ? : 0;
         $anchorActive = (int)($cObj->stdWrapValue('anchorActive', $paginationSettings ?? [])) ? : 0;
-        if ($anchorActive) {
-            $anchorId = (int)($cObj->stdWrapValue('anchorId', $paginationSettings ?? [])) ? : '0';
-        }
+        $anchorId = (int)($cObj->stdWrapValue('anchorId', $paginationSettings ?? [])) ? : 0;
         $paginator = new ArrayPaginator($itemsToPaginate, $currentPage, $itemsPerPage);
         $pagination = new SimplePagination($paginator);
         $allProcessedData = array_diff_key($allProcessedData, array_flip([$paginatedDataArrayKey]));
