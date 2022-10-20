@@ -7,7 +7,7 @@
 **TYPO3 CMS dataProcessors with pagination**
 
 ## System requirements
-- TYPO3 v11.5
+- TYPO3 v11.5 - v12
 
 ## Features
 - PaginatedDatabaseQueryProcessor
