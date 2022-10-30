@@ -17,3 +17,5 @@
     - [BUGFIX] eliminate Undefined array key Warning if anchorId by setting default 0
 * 1.4.0
     - [TASK] TYPO3 12.0 compatible
+* 1.4.1
+    - [FEATURE] Make CSS configurable through TS constant
