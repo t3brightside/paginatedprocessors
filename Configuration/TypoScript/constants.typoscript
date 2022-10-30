@@ -1,3 +1,5 @@
 # customsubcategory=paginatedprocessors=Paginatedprocessors
+# cat=Paginatedprocessors/paginatedprocessors; type=string; label= Styles file
+paginatedprocessors.styles = EXT:paginatedprocessors/Resources/Public/Styles/paginatedprocessors.css
 # cat=Paginatedprocessors/paginatedprocessors; type=boolean; label= Enable default CSS
 paginatedprocessors.enableDefaultStyles = 0

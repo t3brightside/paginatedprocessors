@@ -1,6 +1,5 @@
-
 ["{$paginatedprocessors.enableDefaultStyles}" == "1"]
-  page.includeCSS.paginatedprocessors = EXT:paginatedprocessors/Resources/Public/Styles/paginatedprocessors.css
+  page.includeCSS.paginatedprocessors = {$paginatedprocessors.styles}
 [END]
 
 lib.contentElement.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
