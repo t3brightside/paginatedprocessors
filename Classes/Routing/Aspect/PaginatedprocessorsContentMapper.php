@@ -39,7 +39,7 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
                 $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($value)),
                 $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter(true))
             )
-            ->execute()
+            ->executeQuery()
             ->rowCount();
             return $data;
     }
@@ -59,7 +59,7 @@ class PaginatedprocessorsContentMapper implements StaticMappableAspectInterface
                 $queryBuilder->expr()->eq('tx_paginatedprocessors_urlsegment', $queryBuilder->createNamedParameter($value)),
                 $queryBuilder->expr()->eq('tx_paginatedprocessors_paginationenabled', $queryBuilder->createNamedParameter(true))
             )
-            ->execute()
+            ->executeQuery()
             ->rowCount();
             return $data;
     }
