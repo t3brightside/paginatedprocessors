@@ -49,6 +49,7 @@ class DataToPaginatedData {
                 'nextPageNumber' => $pagination->getNextPageNumber(),
                 'uniquePaginatorName' => $uniquePaginatorName,
                 'pageLinksShown' => $pageLinksShown,
+                'anchorActive' => $anchorActive,
                 'anchorId' => $anchorId,
             )
         );
