@@ -19,3 +19,7 @@
     - [TASK] TYPO3 12.0 compatible
 * 1.4.1
     - [FEATURE] Make CSS configurable through TS constant
+* 1.4.2
+    - [TASK] TYPO3 12.1 compatible
+    - [TASK] Configure dependency injection in Services.yaml
+    - [TASK] Replace ->execute() with ->executeQuery() in ContentMapper
