@@ -1,3 +1,8 @@
+{namespace ea=Brightside\Embedassets\ViewHelpers}
+<f:if condition="{settings.pbEnableCss}">
+    <ea:asset.css embed="1" priority="{settings.pbCssPriority}" identifier="paginatedprocessorsCss" href="{settings.pbCssFile}" />
+</f:if>
+
 <f:if condition="{pagination.pageLinksShown} != 1">
 	<f:if condition="{pagination.pageLinksShown} && {pagination.numberOfPages} > {pagination.pageLinksShown + 3}">
 		<f:then><f:render section="limitedLinksPaginatior" arguments="{_all}" /></f:then>

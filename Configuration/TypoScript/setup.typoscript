@@ -1,6 +1,15 @@
-["{$paginatedprocessors.enableDefaultStyles}" == "1"]
-  page.includeCSS.paginatedprocessors = {$paginatedprocessors.styles}
-[END]
-
 lib.contentElement.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
+lib.contentElement.settings {
+  pbCssFile = {$paginatedprocessors.cssFile}
+  pbCssPriority = {$paginatedprocessors.cssPriority}
+  pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+}
+
 page.10.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
+page.10 {
+  settings {
+    pbCssFile = {$paginatedprocessors.cssFile}
+    pbCssPriority = {$paginatedprocessors.cssPriority}
+    pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+  }
+}
