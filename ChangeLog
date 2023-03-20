@@ -23,3 +23,6 @@
     - [TASK] TYPO3 12.1 compatible
     - [TASK] Configure dependency injection in Services.yaml
     - [TASK] Replace ->execute() with ->executeQuery() in ContentMapper
+* 1.5.0
+    - [TASK] (!BREAKING!) Rename CSS file path constant
+    - [TASK] Embed CSS on demand with embedassets
