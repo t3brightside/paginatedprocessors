@@ -26,3 +26,5 @@
 * 1.5.0
     - [TASK] (!BREAKING!) Rename CSS file path constant
     - [TASK] Embed CSS on demand with embedassets
+* 1.5.1
+    – [BUGFIX] Add MenuP and filesP to services
