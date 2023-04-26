@@ -6,3 +6,7 @@ services:
 
   Brightside\Paginatedprocessors\DataProcessing\PaginatedDatabaseQueryProcessor:
     public: true
+  Brightside\Paginatedprocessors\DataProcessing\PaginatedMenuProcessor:
+    public: true
+  Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor:
+    public: true
