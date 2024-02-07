@@ -28,3 +28,5 @@
     - [TASK] Embed CSS on demand with embedassets
 * 1.5.1
     – [BUGFIX] Add MenuP and filesP to services
+* 1.6.0
+    - [TASK] TYPO3 13 compatibility

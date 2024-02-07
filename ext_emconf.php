@@ -9,11 +9,11 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Brightside OÜ / t3brightside.com',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
-    'version' => '1.5.1',
+    'version' => '1.6.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.4.99',
-            'embedassets' => '1.2.0-1.99.99',
+            'typo3' => '11.5.0-13.9.99',
+            'embedassets' => '1.3.0-1.99.99',
         ],
     ],
     'autoload' => [
