@@ -1,10 +1,10 @@
 # Paginatedprocessors
 [![License](https://poser.pugx.org/t3brightside/paginatedprocessors/license)](LICENSE.txt)
 [![Packagist](https://img.shields.io/packagist/v/t3brightside/paginatedprocessors.svg?style=flat)](https://packagist.org/packages/t3brightside/paginatedprocessors)
+[![Downloads](https://poser.pugx.org/t3brightside/paginatedprocessors/downloads)](https://packagist.org/packages/t3brightside/paginatedprocessors)
 [![TYPO3](https://img.shields.io/badge/TYPO3-v11-orange.svg?style=flat)](https://extensions.typo3.org/extension/youtubevideo)
 [![TYPO3](https://img.shields.io/badge/TYPO3-v12-orange.svg?style=flat)](https://extensions.typo3.org/extension/youtubevideo)
 [![TYPO3](https://img.shields.io/badge/TYPO3-v13-orange.svg?style=flat)](https://extensions.typo3.org/extension/youtubevideo)
-[![Downloads](https://poser.pugx.org/t3brightside/paginatedprocessors/downloads)](https://packagist.org/packages/t3brightside/paginatedprocessors)
 [![Brightside](https://img.shields.io/badge/by-t3brightside.com-orange.svg?style=flat)](https://t3brightside.com)
 
 **TYPO3 CMS dataProcessors with pagination**
