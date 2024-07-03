@@ -105,30 +105,9 @@ pageLinksShown = 5
 ```
 **Route enhancers**
 ```yaml
-routeEnhancers:
-  PaginatedprocessorsByContentId:
-    type: Simple
-    routePath: '/{paginatorId}/{paginationPage}'
-    aspects:
-      paginatorId:
-        type: PaginatedprocessorsContentMapper
-      paginationPage:
-        type: StaticRangeMapper
-        start: '0'
-        end: '999'
-  PaginatedprocessorsByUnigueIdInTs:
-    type: Simple
-    routePath: '/{paginatorId}/{paginationPage}'
-    aspects:
-      paginatorId:
-        type: StaticValueMapper
-        map:
-          files: files
-          gallery: gallery
-      paginationPage:
-        type: StaticRangeMapper
-        start: '0'
-        end: '999'
+imports:
+  -
+    resource: EXT:paginatedprocessors/Configuration/Routes.yaml
 ```
 ## In your own extensions
 **Add pagination fields to custom content element**

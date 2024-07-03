@@ -1,0 +1,24 @@
+routeEnhancers:
+  PaginatedprocessorsByContentId:
+    type: Simple
+    routePath: '/{paginatorId}/{paginationPage}'
+    aspects:
+      paginatorId:
+        type: PaginatedprocessorsContentMapper
+      paginationPage:
+        type: StaticRangeMapper
+        start: '0'
+        end: '999'
+  PaginatedprocessorsByUnigueIdInTs:
+    type: Simple
+    routePath: '/{paginatorId}/{paginationPage}'
+    aspects:
+      paginatorId:
+        type: StaticValueMapper
+        map:
+          files: files
+          gallery: gallery
+      paginationPage:
+        type: StaticRangeMapper
+        start: '0'
+        end: '999'
