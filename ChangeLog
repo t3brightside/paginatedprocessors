@@ -30,3 +30,5 @@
     – [BUGFIX] Add MenuP and filesP to services
 * 1.6.0
     - [TASK] TYPO3 13 compatibility
+* 1.6.1
+    - [TASK] Add Routes.yaml for inclusion
