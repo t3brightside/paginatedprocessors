@@ -3,6 +3,10 @@ lib.contentElement.settings {
   pbCssFile = {$paginatedprocessors.cssFile}
   pbCssPriority = {$paginatedprocessors.cssPriority}
   pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+  previousLabel = {$paginatedprocessors.previousLabel}
+  nextLabel = {$paginatedprocessors.nextLabel}
+  firstLabel = {$paginatedprocessors.firstLabel}
+  lastLabel = {$paginatedprocessors.lastLabel}
 }
 
 page.10.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
@@ -11,5 +15,9 @@ page.10 {
     pbCssFile = {$paginatedprocessors.cssFile}
     pbCssPriority = {$paginatedprocessors.cssPriority}
     pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+    previousLabel = {$paginatedprocessors.previousLabel}
+    nextLabel = {$paginatedprocessors.nextLabel}
+    firstLabel = {$paginatedprocessors.firstLabel}
+    lastLabel = {$paginatedprocessors.lastLabel}
   }
 }
