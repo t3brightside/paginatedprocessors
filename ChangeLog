@@ -35,3 +35,5 @@
 * 1.6.2
     - [FEATURE] Change first, last, previous, and next labels with TS
     - [FEATURE] Add {pagination.totalPageCount}
+* 1.6.3
+    - [FEATURE] Allow basic html tags in navigation link labels
