@@ -5,7 +5,7 @@ paginatedprocessors.cssFile = EXT:paginatedprocessors/Resources/Public/Css/pagin
 paginatedprocessors.cssPriority = 1
 # cat=Paginatedprocessors/paginatedprocessors; type=boolean; label= Enable default CSS
 paginatedprocessors.enableDefaultStyles = 0
-# cat=Paginatedprocessors/paginatedprocessors; type=string; label= Label for 'Previous'
+# cat=Paginatedprocessors/paginatedprocessors; type=string; label= Label for 'Previous':Allowed tags for all the labels: div, i, b, span
 paginatedprocessors.previousLabel = <
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label=  Label for 'Next'
 paginatedprocessors.nextLabel = >
