@@ -51,6 +51,7 @@ class DataToPaginatedData {
                 'pageLinksShown' => $pageLinksShown,
                 'anchorActive' => $anchorActive,
                 'anchorId' => $anchorId,
+                'totalPageCount' => count($itemsToPaginate)
             )
         );
         $allProcessedData = array_merge($allProcessedData, $paginatedData);
