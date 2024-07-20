@@ -6,10 +6,10 @@ paginatedprocessors.cssPriority = 1
 # cat=Paginatedprocessors/paginatedprocessors; type=boolean; label= Enable default CSS
 paginatedprocessors.enableDefaultStyles = 0
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label= Label for 'Previous':Allowed tags for all the labels: div, i, b, span
-paginatedprocessors.previousLabel = <
+paginatedprocessors.previousLabel = &lt;
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label=  Label for 'Next'
-paginatedprocessors.nextLabel = >
+paginatedprocessors.nextLabel = &gt;
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label= Label for 'First'
-paginatedprocessors.firstLabel = <<
+paginatedprocessors.firstLabel = &lt;&lt;
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label=  Label for 'Last'
-paginatedprocessors.lastLabel = >>
+paginatedprocessors.lastLabel = &gt;&gt;
