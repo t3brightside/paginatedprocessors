@@ -37,3 +37,5 @@
     - [FEATURE] Add {pagination.totalPageCount}
 * 1.6.3
     - [FEATURE] Allow basic html tags in navigation link labels
+* 1.6.4
+    - [BUGFIX] Use HTML Entities for labels instead of characters
