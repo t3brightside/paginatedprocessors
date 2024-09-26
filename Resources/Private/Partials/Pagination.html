@@ -20,10 +20,10 @@
 			<li class="previous">
 				<f:if condition="{pagination.previousPageNumber} == 1">
 					<f:then>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:then>
 					<f:else>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:else>
 				</f:if>
 			</li>
@@ -39,10 +39,10 @@
 					<li>
 						<f:if condition="{iterator.isFirst}">
 							<f:then>
-								<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}">{page}</f:link.page>
+								<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}">{page}</f:link.page>
 							</f:then>
 							<f:else>
-								<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
+								<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
 							</f:else>
 						</f:if>
 					</li>
@@ -51,7 +51,7 @@
 		</f:for>
 		<f:if condition="{pagination.nextPageNumber}">
 			<li class="next">
-				<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
+				<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
 			</li>
 		</f:if>
 	</ul>
@@ -79,10 +79,10 @@
 			<li class="previous">
 				<f:if condition="{pagination.previousPageNumber} == 1">
 					<f:then>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:then>
 					<f:else>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:else>
 				</f:if>
 			</li>
@@ -92,7 +92,7 @@
 				<li class="current">1</li>
 			</f:then>
 			<f:else>
-				<li><f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}">1</f:link.page></li>
+				<li><f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}">1</f:link.page></li>
 			</f:else>
 		</f:if>
 		<f:if condition="{pagination.currentPageNumber} > {offSet +2} && {pagination.pageLinksShown} > 1">
@@ -106,7 +106,7 @@
 					</f:then>
 					<f:else>
 						<li class="first">
-							<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
+							<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: page, paginatorId: pagination.uniqueId}">{page}</f:link.page>
 						</li>
 					</f:else>
 				</f:if>
@@ -121,13 +121,13 @@
 					<li class="current">{pagination.numberOfPages}</li>
 				</f:then>
 				<f:else>
-					<li><f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}">{pagination.numberOfPages}</f:link.page></li>
+					<li><f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}">{pagination.numberOfPages}</f:link.page></li>
 				</f:else>
 			</f:if>
 		</f:if>
 		<f:if condition="{pagination.nextPageNumber}">
 			<li class="next">
-				<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
+				<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
 			</li>
 		</f:if>
 	</ul>
@@ -138,17 +138,17 @@
 	<ul class="pagination">
 		<f:if condition="{pagination.previousPageNumber} && {pagination.numberOfPages} > 2">
 			<li class="first">
-				<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.first', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.firstLabel}</f:format.stripTags></f:link.page>
+				<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.first', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.firstLabel}</f:format.stripTags></f:link.page>
 			</li>
 		</f:if>
 		<f:if condition="{pagination.previousPageNumber}">
 			<li class="previous">
 				<f:if condition="{pagination.previousPageNumber} == 1">
 					<f:then>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:then>
 					<f:else>
-						<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
+						<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.previousPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.previous', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.previousLabel}</f:format.stripTags></f:link.page>
 					</f:else>
 				</f:if>
 			</li>
@@ -158,11 +158,11 @@
 		</li>
 		<f:if condition="{pagination.nextPageNumber}">
 			<li class="next">
-				<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
+				<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.nextPageNumber, paginatorId: pagination.uniqueId}" title="{f:translate(key: 'pagination.next', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.nextLabel}</f:format.stripTags></f:link.page>
 			</li>
 			<f:if condition="{pagination.numberOfPages} > 2">
 				<li class="last">
-					<f:link.page section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.last', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.lastLabel}</f:format.stripTags></f:link.page>
+					<f:link.page addQueryString="1" section="{f:if(condition: '{pagination.anchorActive}', then: '{pagination.anchorId}')}" additionalParams="{paginationPage: pagination.numberOfPages, paginatorId: pagination.uniqueId}" title="{f:translate(key:'pagination.last', extensionName: 'paginatedprocessors')}"><f:format.stripTags allowedTags="<b><span><div><i>">{settings.lastLabel}</f:format.stripTags></f:link.page>
 				</li>
 			</f:if>
 		</f:if>
