@@ -18,7 +18,7 @@ class DataToPaginatedData {
         $uniquePaginatorId = $cObj->stdWrapValue('uniqueId', $paginationSettings ?? []);
         $uniquePaginatorIdKey = $cObj->getRequest()->getQueryParams()['paginatorId'] ?? null;
         if($uniquePaginatorId == $uniquePaginatorIdKey) {
-            $currentPage = (int)$cObj->getRequest()->getQueryParams()['paginationPage'] ? : 1;
+            $currentPage = (int)($cObj->getRequest()->getQueryParams()['paginationPage'] ?? 1);
         } else {
             $currentPage = 1;
         }
