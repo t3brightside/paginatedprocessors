@@ -39,3 +39,5 @@
     - [FEATURE] Allow basic html tags in navigation link labels
 * 1.6.4
     - [BUGFIX] Use HTML Entities for labels instead of characters
+* 1.6.5
+    - [BUGFIX] Fix PHP Warning / Merge pull request #6 from dpolakovics/dpolakovics-patch-1
