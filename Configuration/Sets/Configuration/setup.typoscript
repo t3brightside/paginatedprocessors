@@ -1,0 +1,35 @@
+lib.contentElement.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
+lib.contentElement.settings {
+  pbCssFile = {$paginatedprocessors.cssFile}
+  pbCssPriority = {$paginatedprocessors.cssPriority}
+  pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+  previousLabel = {$paginatedprocessors.previousLabel}
+  nextLabel = {$paginatedprocessors.nextLabel}
+  firstLabel = {$paginatedprocessors.firstLabel}
+  lastLabel = {$paginatedprocessors.lastLabel}
+}
+lib.contentElement.variables {
+  variables {
+        pagelistTarget = TEXT
+        pagelistTarget {
+            data = GP:pagelistTarget
+        }
+        pagelistCat = TEXT
+        pagelistCat {
+            data = GP:pagelistCat
+        }
+    }
+}
+
+page.10.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
+page.10 {
+  settings {
+    pbCssFile = {$paginatedprocessors.cssFile}
+    pbCssPriority = {$paginatedprocessors.cssPriority}
+    pbEnableCss = {$paginatedprocessors.enableDefaultStyles}
+    previousLabel = {$paginatedprocessors.previousLabel}
+    nextLabel = {$paginatedprocessors.nextLabel}
+    firstLabel = {$paginatedprocessors.firstLabel}
+    lastLabel = {$paginatedprocessors.lastLabel}
+  }
+}
