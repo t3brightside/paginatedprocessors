@@ -41,3 +41,5 @@
     - [BUGFIX] Use HTML Entities for labels instead of characters
 * 1.6.5
     - [BUGFIX] Fix PHP Warning / Merge pull request #6 from dpolakovics/dpolakovics-patch-1
+* 1.7.1
+    - [TASK] add  v14 compatibility and drop v11
