@@ -13,7 +13,7 @@ class PaginatedMenuProcessor extends MenuProcessor
     *
     * @var array
     */
-    public array $allowedConfigurationKeys = [
+    public $allowedConfigurationKeys = [
         'cache_period',
         'entryLevel',
         'entryLevel.',
