@@ -45,3 +45,5 @@
     - [TASK] add  v14 compatibility and drop v11
 * 1.7.2
     - [TASK] align PaginatedMenuProcessor signature with TYPO3 14 Core
+* 1.7.3
+    - [BUGFIX] resolve inheritance conflict for MenuProcessor in TYPO3 12/14
