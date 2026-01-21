@@ -13,7 +13,7 @@ class PaginatedMenuProcessor extends MenuProcessor
     *
     * @var array
     */
-    public $allowedConfigurationKeys = [
+    public array $allowedConfigurationKeys = [
         'cache_period',
         'entryLevel',
         'entryLevel.',
@@ -59,7 +59,7 @@ class PaginatedMenuProcessor extends MenuProcessor
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    ): array {
         $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
         $paginationSettings = $processorConfiguration['pagination.'];
         if ((int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []))) {
