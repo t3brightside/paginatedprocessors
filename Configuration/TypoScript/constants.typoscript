@@ -1,4 +1,6 @@
 # customsubcategory=paginatedprocessors=Paginatedprocessors
+# cat=Paginatedprocessors/paginatedprocessors; type=string; label= Partials root path
+paginatedprocessors.partialRootPaths = EXT:paginatedprocessors/Resources/Private/Partials/
 # cat=Paginatedprocessors/paginatedprocessors; type=string; label= Styles file
 paginatedprocessors.cssFile = EXT:paginatedprocessors/Resources/Public/Css/paginatedprocessors.css
 # cat=Paginatedprocessors/paginatedprocessors; type=boolean; label= CSS priority, set 0 to make css load in page footer

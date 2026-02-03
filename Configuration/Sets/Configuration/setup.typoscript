@@ -21,8 +21,11 @@ lib.contentElement.variables {
     }
 }
 
-page.10.partialRootPaths.345 = EXT:paginatedprocessors/Resources/Private/Partials
 page.10 {
+  partialRootPaths {
+    345 = EXT:paginatedprocessors/Resources/Private/Partials
+    346 = {$paginatedprocessors.partialRootPath}
+  }
   settings {
     pbCssFile = {$paginatedprocessors.cssFile}
     pbCssPriority = {$paginatedprocessors.cssPriority}

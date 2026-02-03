@@ -1,0 +1,60 @@
+categories:
+  Paginatedprocessors:
+    label: 'Paginated Processors'
+  Paginatedprocessors.templates:
+    label: 'Templates'
+    parent: Paginatedprocessors
+  Paginatedprocessors.labels:
+    label: 'Labels'
+    parent: Paginatedprocessors
+
+settings:
+  paginatedprocessors.partialRootPath:
+    label: 'Partials'
+    category: Paginatedprocessors.templates
+    description: 'Path to partials'
+    type: string
+    default: 'EXT:paginatedprocessors/Resources/Private/Partials/'
+  paginatedprocessors.cssFile:
+    label: 'Styles file'
+    category: Paginatedprocessors.templates
+    description: 'Path to the CSS file'
+    type: string
+    default: 'EXT:paginatedprocessors/Resources/Public/Css/paginatedprocessors.css'
+  paginatedprocessors.enableDefaultStyles:
+    label: 'Enable default CSS'
+    category: Paginatedprocessors.templates
+    description: 'Toggle the inclusion of default extension styles'
+    type: bool
+    default: 0
+  paginatedprocessors.cssPriority:
+    label: 'CSS priority'
+    category: Paginatedprocessors.templates
+    description: 'Set to 1 to load CSS in page header, 0 in page footer'
+    type: bool
+    default: 1
+
+  paginatedprocessors.previousLabel:
+    label: "Label for 'Previous'"
+    category: Paginatedprocessors.labels
+    description: 'Allowed tags: div, i, b, span'
+    type: string
+    default: '&lt;'
+  paginatedprocessors.nextLabel:
+    label: "Label for 'Next'"
+    category: Paginatedprocessors.labels
+    description: 'Allowed tags: div, i, b, span'
+    type: string
+    default: '&gt;'
+  paginatedprocessors.firstLabel:
+    label: "Label for 'First'"
+    category: Paginatedprocessors.labels
+    description: 'Allowed tags: div, i, b, span'
+    type: string
+    default: '&lt;&lt;'
+  paginatedprocessors.lastLabel:
+    label: "Label for 'Last'"
+    category: Paginatedprocessors.labels
+    description: 'Allowed tags: div, i, b, span'
+    type: string
+    default: '&gt;&gt;'
