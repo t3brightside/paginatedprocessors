@@ -47,3 +47,6 @@
     - [TASK] align PaginatedMenuProcessor signature with TYPO3 14 Core
 * 1.7.3
     - [BUGFIX] resolve inheritance conflict for MenuProcessor in TYPO3 12/14
+* 1.7.4
+    - [BUGFIX] Fatal error: PaginatedMenuProcessor::$allowedConfigurationKeys must be array #9
+    - [TASK] Improvce templating and site sets
