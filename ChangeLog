@@ -50,3 +50,5 @@
 * 1.7.4
     - [BUGFIX] Fatal error: PaginatedMenuProcessor::$allowedConfigurationKeys must be array #9
     - [TASK] Improvce templating and site sets
+* 1.7.5
+    - [TASK] implements DataProcessorInterface
