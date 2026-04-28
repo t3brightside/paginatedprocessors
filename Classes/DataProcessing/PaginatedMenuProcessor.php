@@ -2,69 +2,35 @@
 namespace Brightside\Paginatedprocessors\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3\CMS\Frontend\DataProcessing\DataProcessorInterface;
 use TYPO3\CMS\Frontend\DataProcessing\MenuProcessor;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Brightside\Paginatedprocessors\Processing\DataToPaginatedData;
 
-class PaginatedMenuProcessor extends MenuProcessor
+class PaginatedMenuProcessor implements DataProcessorInterface
 {
-    /**
-     * This method overrides the parent and injects your custom keys.
-     * By doing it here instead of a class property, we avoid the 
-     * Fatal Error: "Type must be array (as in class MenuProcessor)"
-     */
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ): array {
-        // We manually define the keys here to ensure compatibility across TYPO3 versions
-        $this->allowedConfigurationKeys = [
-            'cache_period',
-            'entryLevel',
-            'entryLevel.',
-            'special',
-            'special.',
-            'minItems',
-            'minItems.',
-            'maxItems',
-            'maxItems.',
-            'begin',
-            'begin.',
-            'alternativeSortingField',
-            'alternativeSortingField.',
-            'showAccessRestrictedPages',
-            'showAccessRestrictedPages.',
-            'excludeUidList',
-            'excludeUidList.',
-            'excludeDoktypes',
-            'includeNotInMenu',
-            'includeNotInMenu.',
-            'alwaysActivePIDlist',
-            'alwaysActivePIDlist.',
-            'protectLvar',
-            'addQueryString',
-            'addQueryString.',
-            'if',
-            'if.',
-            'levels',
-            'levels.',
-            'expandAll',
-            'expandAll.',
-            'includeSpacer',
-            'includeSpacer.',
-            'as',
-            'titleField',
-            'titleField.',
-            'dataProcessing',
-            'dataProcessing.',
-            'pagination.', // Your custom key
-        ];
+    ) {
+        // 1. Instantiate the core MenuProcessor manually
+        $menuProcessor = GeneralUtility::makeInstance(MenuProcessor::class);
 
-        $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
+        // 2. Let the core processor build the menu. 
+        // It will safely ignore your custom "pagination." key.
+        $allProcessedData = $menuProcessor->process(
+            $cObj,
+            $contentObjectConfiguration,
+            $processorConfiguration,
+            $processedData
+        );
         
+        // 3. Grab your pagination settings safely
         $paginationSettings = $processorConfiguration['pagination.'] ?? [];
         
+        // 4. Apply your custom pagination logic to the built menu
         if ((int)($cObj->stdWrapValue('isActive', $paginationSettings))) {
             $paginatedData = new DataToPaginatedData();
             $allProcessedData = $paginatedData->getPaginatedData(
@@ -75,7 +41,6 @@ class PaginatedMenuProcessor extends MenuProcessor
                 $allProcessedData[$processorConfiguration['as']],
                 $processorConfiguration['as']
             );
-            return $allProcessedData;
         }
 
         return $allProcessedData;

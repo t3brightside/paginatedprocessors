@@ -2,11 +2,12 @@
 namespace Brightside\Paginatedprocessors\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3\CMS\Frontend\Resource\FileCollector;
+use TYPO3\CMS\Frontend\DataProcessing\DataProcessorInterface;
 use TYPO3\CMS\Frontend\DataProcessing\FilesProcessor;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Brightside\Paginatedprocessors\Processing\DataToPaginatedData;
 
-class PaginatedFilesProcessor extends FilesProcessor
+class PaginatedFilesProcessor implements DataProcessorInterface
 {
     public function process(
         ContentObjectRenderer $cObj,
@@ -14,9 +15,22 @@ class PaginatedFilesProcessor extends FilesProcessor
         array $processorConfiguration,
         array $processedData
     ) {
-        $allProcessedData = parent::process($cObj, $contentObjectConfiguration, $processorConfiguration, $processedData);
-        $paginationSettings = $processorConfiguration['pagination.'];
-        if ((int)($cObj->stdWrapValue('isActive', $paginationSettings ?? []))) {
+        // 1. Instantiate the core FilesProcessor manually
+        $filesProcessor = GeneralUtility::makeInstance(FilesProcessor::class);
+
+        // 2. Let the core processor fetch and process the files first
+        $allProcessedData = $filesProcessor->process(
+            $cObj, 
+            $contentObjectConfiguration, 
+            $processorConfiguration, 
+            $processedData
+        );
+
+        // Get pagination settings safely
+        $paginationSettings = $processorConfiguration['pagination.'] ?? [];
+
+        // 3. Apply your custom pagination logic
+        if ((int)($cObj->stdWrapValue('isActive', $paginationSettings))) {
             $paginatedData = new DataToPaginatedData();
             $allProcessedData = $paginatedData->getPaginatedData(
                 $cObj,
@@ -26,9 +40,8 @@ class PaginatedFilesProcessor extends FilesProcessor
                 $allProcessedData[$processorConfiguration['as']],
                 $processorConfiguration['as']
             );
-            return $allProcessedData;
-        } else {
-            return $allProcessedData;
         }
+        
+        return $allProcessedData;
     }
 }
