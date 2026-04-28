@@ -2,7 +2,7 @@
 namespace Brightside\Paginatedprocessors\DataProcessing;
 
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3\CMS\Frontend\DataProcessing\DataProcessorInterface;
+use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\Frontend\DataProcessing\MenuProcessor;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Brightside\Paginatedprocessors\Processing\DataToPaginatedData;
