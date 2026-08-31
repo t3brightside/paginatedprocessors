@@ -52,3 +52,7 @@
     - [TASK] Improvce templating and site sets
 * 1.7.5
     - [TASK] implements DataProcessorInterface
+* 1.7.6
+    [TASK] import TS to remove duplicate sources
+    [TASK] drop v12 compatibility
+    [BUGFIX] v1.7.5 triggers an exception in the PaginatedMenuProcessor  #11
